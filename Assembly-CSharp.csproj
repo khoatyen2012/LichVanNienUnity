@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3028F878-CBB7-CED2-83DA-9C8CAE0B5B73}</ProjectGuid>
+    <ProjectGuid>{594601E1-AD3E-BBCF-BDF0-14E616F3813F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -88,6 +88,7 @@
      <Compile Include="Assets\Scripts\Controller\TroGiupControlller.cs" />
      <Compile Include="Assets\Scripts\IO\ReadText.cs" />
      <Compile Include="Assets\Scripts\Level\Level.cs" />
+     <Compile Include="Assets\Scripts\LichVanNien\Move\MoveLichNgay.cs" />
      <Compile Include="Assets\Scripts\ObjectPooling\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\PopUp\MainGame.cs" />
      <Compile Include="Assets\Scripts\PopUp\PopUpGameOver.cs" />
