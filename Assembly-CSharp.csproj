@@ -89,6 +89,7 @@
      <Compile Include="Assets\Scripts\IO\ReadText.cs" />
      <Compile Include="Assets\Scripts\Level\Level.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\Move\MoveLichNgay.cs" />
+     <Compile Include="Assets\Scripts\LichVanNien\ThaoTac\LunarYearTools.cs" />
      <Compile Include="Assets\Scripts\ObjectPooling\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\PopUp\MainGame.cs" />
      <Compile Include="Assets\Scripts\PopUp\PopUpGameOver.cs" />
