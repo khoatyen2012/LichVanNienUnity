@@ -68,6 +68,7 @@ public class MoveLichNgay : MonoBehaviour {
 		pTra.GetChild (0).GetChild (2).GetComponent<tk2dTextMesh> ().text = "THÁNG "+pDt.Month+" NĂM "+pDt.Year;
 		int[] tam = LunarYearTools.convertSolar2Lunar (pDt.Day, pDt.Month, pDt.Year, 7);
 		pTra.GetChild (2).GetChild (2).GetComponent<tk2dTextMesh> ().text = ""+tam[0];
+        pTra.GetChild(2).GetChild(3).GetComponent<tk2dTextMesh>().text = tam[1]+"/"+tam[2];
 	}
 	
 	// Update is called once per frame
