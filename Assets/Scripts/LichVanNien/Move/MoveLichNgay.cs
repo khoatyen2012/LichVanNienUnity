@@ -32,7 +32,10 @@ public class MoveLichNgay : MonoBehaviour {
 		startPosition = this.transform.position;
 
 		today = DateTime.Now;
+
 		doSetDate (oHomNay, today);
+		doSetDate (oHomQua, today.AddDays (-1));
+		doSetDate (oNgayMai, today.AddDays (1));
 
 
 	}
@@ -40,35 +43,47 @@ public class MoveLichNgay : MonoBehaviour {
 	void doSetDate(Transform pTra,DateTime pDt)
 	{
 		pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "" + pDt.Day;
+		//Thang
+		pTra.GetChild (0).GetChild (2).GetComponent<tk2dTextMesh> ().text = "THÁNG "+pDt.Month+" NĂM "+pDt.Year;
+		int[] tam = LunarYearTools.convertSolar2Lunar (pDt.Day, pDt.Month, pDt.Year, 7);
+		pTra.GetChild (2).GetChild (2).GetComponent<tk2dTextMesh> ().text = ""+tam[0];
+		pTra.GetChild(2).GetChild(3).GetComponent<tk2dTextMesh>().text = tam[1]+"/"+tam[2];
 
 
 		switch (pDt.DayOfWeek.ToString ().ToLower ().Substring(0,2)) {
 		case "mo":
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 2";
+			pTra.GetChild (4).GetComponent<tk2dSprite> ().color = new Color ((float)4/255, (float)167/255, (float)12/255, 1);
+			//pTra.GetChild (0).GetChild (2).GetComponent<tk2dTextMesh> ().color
+			//pTra.GetChild (2).GetChild (2).GetComponent<tk2dTextMesh> ().color
+			//pTra.GetChild(2).GetChild(3).GetComponent<tk2dTextMesh>()
 			break;
 		case "tu":
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 3";
+			pTra.GetChild (4).GetComponent<tk2dSprite> ().color = new Color ((float)38/255, (float)104/255, (float)234/255, 1);
 			break;
 		case "we":
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 4";
+			pTra.GetChild (4).GetComponent<tk2dSprite> ().color = new Color ((float)13/255, (float)126/255, (float)84/255, 1);
 			break;
 		case "th":
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 5";
+			pTra.GetChild (4).GetComponent<tk2dSprite> ().color = new Color ((float)205/255, 0, (float)153/255, 1);
 			break;
 		case "fr":
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 6";
+			pTra.GetChild (4).GetComponent<tk2dSprite> ().color = new Color ((float)195/255, (float)96/255, (float)52/255, 1);
 			break;
 		case "sa":
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 7";
+			pTra.GetChild (4).GetComponent<tk2dSprite> ().color = new Color ((float)38/255, (float)104/255, (float)234/255, 1);
 			break;
 			default:
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Chủ Nhật";
+			pTra.GetChild (4).GetComponent<tk2dSprite> ().color = new Color (1, (float)84/255, (float)84/255, 1);
 			break;
 		}
-		pTra.GetChild (0).GetChild (2).GetComponent<tk2dTextMesh> ().text = "THÁNG "+pDt.Month+" NĂM "+pDt.Year;
-		int[] tam = LunarYearTools.convertSolar2Lunar (pDt.Day, pDt.Month, pDt.Year, 7);
-		pTra.GetChild (2).GetChild (2).GetComponent<tk2dTextMesh> ().text = ""+tam[0];
-        pTra.GetChild(2).GetChild(3).GetComponent<tk2dTextMesh>().text = tam[1]+"/"+tam[2];
+	
 	}
 	
 	// Update is called once per frame
