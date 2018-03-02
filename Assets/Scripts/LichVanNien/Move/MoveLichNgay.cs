@@ -18,6 +18,10 @@ public class MoveLichNgay : MonoBehaviour {
 	//List<string> lst = new List<string>();
 	string[] mang;
 
+    ThanThai tbL = new ThanThai();
+    ThanThai tbR = new ThanThai();
+    ThanThai tbC = new ThanThai();
+
 
 
 	void OnApplicationPause(bool pauseStatus)
@@ -66,22 +70,26 @@ public class MoveLichNgay : MonoBehaviour {
 
 	}
 
-	void doSetDate(Transform pTra,DateTime pDt)
+	void doSetDate(Transform pTra,DateTime pDt, ref ThanThai thanthai)
 	{
 		int chon = UnityEngine.Random.Range (0, 10);
 		switch (chon) {
 		case 0:
 			pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("nenmua");
+            thanthai.Bg = "nenmua";
 			break;
 		case 1:
 			pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("nentuyet");
+            thanthai.Bg = "nentuyet";
 			break;
 		case 2:
 			pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("nenvang");
+            thanthai.Bg = "nenvang";
 			break;
 
 		default:
 			pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("nennang");
+            thanthai.Bg = "nennang";
 			break;
 		}
 
@@ -91,82 +99,90 @@ public class MoveLichNgay : MonoBehaviour {
 		switch (chon) {
 		case 0:
 			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namdodam");
+            thanthai.Nam = "namdodam";
 			break;
 		case 1:
 			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namtim");
+            thanthai.Nam = "namtim";
 			break;
 		case 2:
 			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namxanhduong");
+            thanthai.Nam = "namxanhduong";
 			break;
 		case 3:
 			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namve");
+            thanthai.Nam = "namve";
 			break;
 		case 4:
 			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namkysu");
+            thanthai.Nam = "namkysu";
 			break;
 		case 5:
 			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namlichviet");
+            thanthai.Nam = "namlichviet";
 			break;
 		case 6:
 			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namtana");
+            thanthai.Nam = "namtana";
 			break;
 		case 7:
 			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namdothuphap");
+            thanthai.Nam = "namdothuphap";
 			break;
 		case 8:
 			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namdoanhnhan");
+            thanthai.Nam = "namdoanhnhan";
 			break;
 		default:
 			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nambetrap");
+            thanthai.Nam = "nambetrap";
 			break;
 		}
 
 		switch (chonNu) {
 		case 0:
 			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nudodam");
+            thanthai.Nu = "nudodam";
 			break;
 		case 1:
 			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nutim");
+            thanthai.Nu = "nutim";
 			break;
 		case 2:
 			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nuaodai");
+            thanthai.Nu = "nuaodai";
 			break;
 		case 3:
 			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nudoimu");
+            thanthai.Nu = "nudoimu";
 			break;
 		case 4:
 			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nuaobetrap");
+            thanthai.Nu = "nuaobetrap";
 			break;
 		case 5:
 			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nuvanphong");
+            thanthai.Nu = "nuvanphong";
 			break;
 		case 6:
 			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nudoinon");
+            thanthai.Nu = "nudoinon";
 			break;
 		case 7:
 			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("ongcongongtao");
+            thanthai.Nu = "ongcongongtao";
 			break;
 		case 8:
 			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("namxanhthuphap");
+            thanthai.Nu = "namxanhthuphap";
 			break;
 		default:
 			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nudoixe");
+            thanthai.Nu = "nudoixe";
 			break;
 		}
 
-		string content = "";
-		string author = "";
-
-		chon=pDt.Day+(pDt.Month*31);
-		if (mang [chon].Contains ("@")) {
-			int chiso = mang [chon].IndexOf ("@");
-			if (chiso != -1) {
-				pTra.GetChild (0).GetChild (3).GetComponent<tk2dTextMesh> ().text = mang [chon].Substring (0, chiso);
-				pTra.GetChild (0).GetChild (4).GetComponent<tk2dTextMesh> ().text = mang [chon].Substring (chiso+1);
-				//content=""+mang [chon].Substring (0, chiso);
-				//author=""+ mang [chon].Substring (chiso+1);
-			}
-		}
+	
 
 	
 		
@@ -239,7 +255,6 @@ public class MoveLichNgay : MonoBehaviour {
 			break;
 			default:
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Chủ Nhật";
-			;
             doUpdateColor(pTra, new Color(1, (float)84 / 255, (float)84 / 255, 1));
 			break;
 		}
@@ -251,17 +266,531 @@ public class MoveLichNgay : MonoBehaviour {
 			pTra.GetChild (4).GetChild (0).gameObject.SetActive (true);
 		}
 
-		chon = UnityEngine.Random.Range (0, 6);
-		if (chon <= 2) {
-			pTra.GetChild (0).GetChild (5).gameObject.SetActive (false);
-			pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
-		} else if (chon <= 4) {
-			pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
-			pTra.GetChild (0).GetChild (6).gameObject.SetActive (false);
-		} else {
-			pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
-			pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
-		}
+
+        string content = "";
+        string author = "";
+
+        if (am[0] == 1 && am[1] == 1)
+        {
+            content = "Chúc mừng năm mới. Ngày mùng 1 tết cố truyền dân tộc";
+            author = "Xuân đã về";
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namtetdo");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("namtet");
+
+
+        }
+        else if (am[0] == 2 && am[1] == 1)
+        {
+            content = "Mùng 1 tết cha mùng 2 tết mẹ mùng 3 tết thầy";
+            author = "Mùng 2 tết";
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nubanhtrung");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("namduahau");
+        }
+        else if (am[0] == 3 && am[1] == 1)
+        {
+            content = "Mùng 3 tết thầy";
+            author = "Mùng 3 tết";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nubanhtrung");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nutetdo");
+
+        }
+        else if (am[0] == 15 && am[1] == 1)
+        {
+            content = "Ngày dằm tháng giêng";
+            author = "Tết nguyên tiêu";
+        }
+        else if (am[0] == 3 && am[1] == 3)
+        {
+            content = "Tết bánh trôi bánh tray";
+            author = "Tết hàn thực";
+        }
+        else if (am[0] == 10 && am[1] == 3)
+        {
+            content = "Ngày dỗ tổ hùng vương. Vua hùng đã có công dựng nước";
+            author = "Vua Hùng";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namvuahung");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+        }
+        else if (am[0] == 15 && am[1] == 4)
+        {
+            content = "Ngày lễ phật đản";
+            author = "A di đà phật";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namsuphu");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+        }
+        else if (am[0] == 5 && am[1] == 5)
+        {
+            content = "Ngày tết đoan ngọ";
+            author = "Tết đoan ngọ";
+
+
+
+        }
+        else if (am[0] == 15 && am[1] == 7)
+        {
+            content = "Công cha như núi thái sơn. Nghĩa mẹ như nước trong nguồn chảy ra";
+            author = "Ngày lễ vu lan";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
+
+        }
+        else if (am[0] == 15 && am[1] == 8)
+        {
+            content = "Ngày tết trung thu";
+            author = "Chị hằng";
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namduahau");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+        }
+        else if (am[0] == 9 && am[1] == 9)
+        {
+            content = "Ngày tết cửu trùng";
+            author = "Diệt sâu bọ";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("dietsaubo");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+        }
+        else if (am[0] == 10 && am[1] == 10)
+        {
+            content = "Ngày tết thường tân";
+            author = "tết";
+        }
+        else if (am[0] == 15 && am[1] == 10)
+        {
+            content = "Ngày tết hạ nguyên";
+            author = "Nguyên";
+        }
+        else if (am[0] == 23 && am[1] == 12)
+        {
+            content = "Tiễn Ông Công Ông Táo Về Trời";
+            author = "Táo quân";
+
+   
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("ongcongongtao");
+
+        }
+        else if (pDt.Day == 1 && pDt.Month == 1)
+        {
+            content = "Ngày tết dương lịch";
+            author = "Happy new year";
+        }
+        else if (pDt.Day == 14 && pDt.Month == 2)
+        {
+            content = "Ngày lễ tình nhân";
+            author = "Valentine";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namtinhyeu");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+        }
+        else if (pDt.Day == 27 && pDt.Month == 2)
+        {
+            content = "Ngày thầy thuốc Việt Nam";
+            author = "Lương y như từ mẫu";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nambacsi");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+     
+
+        }
+        else if (pDt.Day == 8 && pDt.Month == 3)
+        {
+            content = "Ngày quốc tế phụ nữ";
+            author = "Yêu thương";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuaobetrap");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nudoinon");
+
+        }
+        else if (pDt.Day == 26 && pDt.Month == 3)
+        {
+            content = "Ngày thành lập Đoàn TNCS Hồ Chí Minh";
+            author = "Hồ Chí Minh";
+        }
+        else if (pDt.Day == 1 && pDt.Month == 4)
+        {
+            content = "Ngày cá tháng 4";
+            author = "Nói dối";
+        }
+        else if (pDt.Day == 30 && pDt.Month == 4)
+        {
+            content = "GIẢI PHÓNG MIỀN NAM";
+            author = "Giải Phóng";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nubodoi");
+
+
+        }
+        else if (pDt.Day == 1 && pDt.Month == 5)
+        {
+            content = "Ngày quốc tế lao động";
+            author = "Lao động";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namkysu");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nudoixe");
+
+        }
+        else if (pDt.Day == 7 && pDt.Month == 5)
+        {
+            content = "Ngày chiến thắng điện biên phủ";
+            author = "Đừng ngủ quên trên chiến thắng";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+
+        }
+        else if (pDt.Day == 13 && pDt.Month == 5)
+        {
+            content = "Ngày của mẹ !";
+            author = "Mẹ yêu";
+
+   
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
+
+   
+        }
+        else if (pDt.Day == 19 && pDt.Month == 5)
+        {
+            content = "Ngày sinh chủ tịch Hồ Chí Minh";
+            author = "Sinh nhật bác";
+        }
+        else if (pDt.Day == 1 && pDt.Month == 6)
+        {
+            content = "Ngày quốc tế thiếu nhi";
+            author = "Trẻ em hôm nay";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
+
+         
+        }
+        else if (pDt.Day == 17 && pDt.Month == 6)
+        {
+            content = "Ngày của cha";
+            author = "Nợ cha 1 sự nghiệp";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+      
+
+    
+        }
+        else if (pDt.Day == 21 && pDt.Month == 6)
+        {
+            content = "Ngày báo chí Việt Nam";
+            author = "Balo";
+        }
+        else if (pDt.Day == 28 && pDt.Month == 6)
+        {
+            content = "Ngày gia đình Việt Nam";
+            author = "Gia Đình";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
+
+        }
+        else if (pDt.Day == 11 && pDt.Month == 7)
+        {
+            content = "Ngày dân số thế giới";
+            author = "Kế Hoạch Hóa Gia Đình";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
+
+        }
+        else if (pDt.Day == 27 && pDt.Month == 7)
+        {
+            content = "Ngày thương binh liệt sĩ";
+            author = "Tổ quốc ghi công";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+
+        }
+        else if (pDt.Day == 28 && pDt.Month == 7)
+        {
+            content = "Ngày công đoàn Việt nam";
+            author = "Đoàn kết";
+
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("codosaovang");
+   
+        }
+        else if (pDt.Day == 19 && pDt.Month == 8)
+        {
+            content = "Ngày tổng khởi nghĩa";
+            author = "Cách mạng tháng 8";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+
+        }
+        else if (pDt.Day == 2 && pDt.Month == 9)
+        {
+            content = "Ngày quốc khánh";
+            author = "Cờ đỏ";
+
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("codosaovang");
+
+        }
+        else if (pDt.Day == 10 && pDt.Month == 9)
+        {
+            content = "Ngày thành lập mặt trận tổ quốc Việt nam";
+            author = "Việt Nam";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+
+        }
+        else if (pDt.Day == 1 && pDt.Month == 10)
+        {
+            content = "Ngày quốc tế người cao tuổi";
+            author = "Kĩnh lão đắc thọ";
+
+        }
+        else if (pDt.Day == 10 && pDt.Month == 10)
+        {
+            content = "Ngày giải phóng Thủ Đô";
+            author = "Hà Nội";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+
+        }
+        else if (pDt.Day == 13 && pDt.Month == 10)
+        {
+            content = "Ngày doanh nhân Việt Nam";
+            author = "Startup";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namdoanhnhan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+   
+        }
+        else if (pDt.Day == 20 && pDt.Month == 10)
+        {
+            content = "Ngày phụ nữ Việt Nam";
+            author = "Hoa Hồng Có Gai";
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuaobetrap");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nudoinon");
+
+        }
+        else if (pDt.Day == 31 && pDt.Month == 10)
+        {
+            content = "Ngày Hallowen";
+            author = "Bí Ngô";
+
+        
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhalowen");
+
+        }
+        else if (pDt.Day == 9 && pDt.Month == 11)
+        {
+            content = "Ngày pháp luật Việt Nam";
+            author = "pháp luật";
+        }
+        else if (pDt.Day == 20 && pDt.Month == 11)
+        {
+            content = "Ngày Nhà Giáo Việt Nam";
+            author = "Bụi phấn";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namthaygiao");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+        }
+        else if (pDt.Day == 23 && pDt.Month == 11)
+        {
+            content = "Ngày thành lập hội chữ thập đỏ Việt Nam";
+            author = "Cộng đồng";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nambacsi");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+        }
+        else if (pDt.Day == 1 && pDt.Month == 12)
+        {
+            content = "Ngày toàn thế giới chống xi-đa";
+            author = "HIV AIDS";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nambacsi");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+
+        }
+        else if (pDt.Day == 19 && pDt.Month == 12)
+        {
+            content = "Ngày toàn quốc kháng chiến";
+            author = "Cách mạng tháng 12";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+
+        }
+        else if (pDt.Day == 22 && pDt.Month == 12)
+        {
+            content = "Ngày thành lập quân đội nhân dân Việt Nam";
+            author = "CF";
+
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+    
+       
+        }
+        else if (pDt.Day == 24 && pDt.Month == 12)
+        {
+            content = "Ngày lễ giáng sinh";
+            author = "Noel";
+            pTra.GetChild(0).GetComponent<tk2dSprite>().SetSprite("giangsinh");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+          
+        }
+        else if (pDt.Day == 25 && pDt.Month == 12)
+        {
+            content = "Giáng sinh an lành";
+            author = "Noel";
+
+            pTra.GetChild(0).GetComponent<tk2dSprite>().SetSprite("giangsinh");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+        }
+        else
+        {
+            chon = pDt.Day + (pDt.Month * 31);
+            if (mang[chon].Contains("@"))
+            {
+                int chiso = mang[chon].IndexOf("@");
+                if (chiso != -1)
+                {
+                
+                    content = "" + mang[chon].Substring(0, chiso);
+                    author = "" + mang[chon].Substring(chiso + 1);
+                }
+            }
+
+            chon = UnityEngine.Random.Range(0, 6);
+            if (chon <= 2)
+            {
+                pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+                pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            }
+            else if (chon <= 4)
+            {
+                pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+                pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            }
+            else
+            {
+                pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+                pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            }
+
+        }
+
+        pTra.GetChild(0).GetChild(3).GetComponent<tk2dTextMesh>().text = content;
+        if (author.Length > 14)
+            author = author.Substring(0, 13)+"...";
+        pTra.GetChild(0).GetChild(4).GetComponent<tk2dTextMesh>().text = author;
+
+        thanthai.Danhngon = content;
+        thanthai.Author = author;
+	
 	
 	
 	}
