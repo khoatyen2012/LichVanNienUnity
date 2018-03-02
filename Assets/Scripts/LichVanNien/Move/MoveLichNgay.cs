@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 
@@ -12,6 +13,10 @@ public class MoveLichNgay : MonoBehaviour {
 	Transform oHomQua;
 	Transform oHomNay;
 	Transform oNgayMai;
+
+	string sText = "danhngon";
+	//List<string> lst = new List<string>();
+	string[] mang;
 
 
 
@@ -39,6 +44,9 @@ public class MoveLichNgay : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		string ss = ReadText.readTextFile(sText);
+		GetDaTa (ss);
 		oHomQua = this.transform.GetChild (0);
 		oHomNay = this.transform.GetChild (1);
 		oNgayMai = this.transform.GetChild (2);
@@ -46,8 +54,15 @@ public class MoveLichNgay : MonoBehaviour {
 
 		startPosition = this.transform.position;
 
-
+	
 		Today ();
+
+	}
+
+	void GetDaTa(string tmg)
+	{
+		 mang = tmg.Trim().Split('#');
+
 
 	}
 
@@ -139,24 +154,28 @@ public class MoveLichNgay : MonoBehaviour {
 			break;
 		}
 
-		chon = UnityEngine.Random.Range (0, 6);
-		if (chon <= 2) {
-			pTra.GetChild (0).GetChild (5).gameObject.SetActive (false);
-			pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
-		} else if (chon <= 4) {
-			pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
-			pTra.GetChild (0).GetChild (6).gameObject.SetActive (false);
-		} else {
-			pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
-			pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
+		string content = "";
+		string author = "";
+
+		chon=pDt.Day+(pDt.Month*31);
+		if (mang [chon].Contains ("@")) {
+			int chiso = mang [chon].IndexOf ("@");
+			if (chiso != -1) {
+				pTra.GetChild (0).GetChild (3).GetComponent<tk2dTextMesh> ().text = mang [chon].Substring (0, chiso);
+				pTra.GetChild (0).GetChild (4).GetComponent<tk2dTextMesh> ().text = mang [chon].Substring (chiso+1);
+				//content=""+mang [chon].Substring (0, chiso);
+				//author=""+ mang [chon].Substring (chiso+1);
+			}
 		}
+
+	
 		
 		pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "" + pDt.Day;
 		//Thang
 		pTra.GetChild (0).GetChild (2).GetComponent<tk2dTextMesh> ().text = "THÁNG "+pDt.Month+" NĂM "+pDt.Year;
-		int[] tam = LunarYearTools.convertSolar2Lunar (pDt.Day, pDt.Month, pDt.Year, 7);
-		pTra.GetChild (2).GetChild (2).GetComponent<tk2dTextMesh> ().text = ""+tam[0];
-		pTra.GetChild(2).GetChild(3).GetComponent<tk2dTextMesh>().text = tam[1]+"/"+tam[2];
+		int[] am = LunarYearTools.convertSolar2Lunar (pDt.Day, pDt.Month, pDt.Year, 7);
+		pTra.GetChild (2).GetChild (2).GetComponent<tk2dTextMesh> ().text = ""+am[0];
+		pTra.GetChild(2).GetChild(3).GetComponent<tk2dTextMesh>().text = am[1]+"/"+am[2];
 
 		int dGio = DateTime.Now.Hour;
 		string dPhut = ""+DateTime.Now.Minute;
@@ -231,6 +250,19 @@ public class MoveLichNgay : MonoBehaviour {
 		} else {
 			pTra.GetChild (4).GetChild (0).gameObject.SetActive (true);
 		}
+
+		chon = UnityEngine.Random.Range (0, 6);
+		if (chon <= 2) {
+			pTra.GetChild (0).GetChild (5).gameObject.SetActive (false);
+			pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
+		} else if (chon <= 4) {
+			pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
+			pTra.GetChild (0).GetChild (6).gameObject.SetActive (false);
+		} else {
+			pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
+			pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
+		}
+	
 	
 	}
 
