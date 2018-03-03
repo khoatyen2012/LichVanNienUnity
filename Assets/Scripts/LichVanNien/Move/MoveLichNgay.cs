@@ -41,9 +41,9 @@ public class MoveLichNgay : MonoBehaviour {
 	{
 		today = DateTime.Now;
 
-		doSetDate (oHomNay, today);
-		doSetDate (oHomQua, today.AddDays (-1));
-		doSetDate (oNgayMai, today.AddDays (1));
+		doSetDate (oHomNay, today,ref tbC,0);
+		doSetDate (oHomQua, today.AddDays (-1),ref tbL,0);
+		doSetDate (oNgayMai, today.AddDays (1),ref tbR,0);
 	}
 
 	// Use this for initialization
@@ -55,6 +55,7 @@ public class MoveLichNgay : MonoBehaviour {
 		oHomNay = this.transform.GetChild (1);
 		oNgayMai = this.transform.GetChild (2);
 		oHomNay.GetChild (4).GetChild (0).GetComponent<tk2dUIItem> ().OnClick += onClick_ToDay;
+	
 
 		startPosition = this.transform.position;
 
@@ -70,7 +71,7 @@ public class MoveLichNgay : MonoBehaviour {
 
 	}
 
-	void doSetDate(Transform pTra,DateTime pDt, ref ThanThai thanthai)
+	void doSetDate(Transform pTra,DateTime pDt, ref ThanThai thanthai,int pCheckok)
 	{
 		int chon = UnityEngine.Random.Range (0, 10);
 		switch (chon) {
@@ -280,6 +281,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("namtet");
 
+			thanthai.Sl = 2;
+			thanthai.Nam = "namtetdo";
+			thanthai.Nu = "namtet";
+
 
         }
         else if (am[0] == 2 && am[1] == 1)
@@ -291,6 +296,10 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("namduahau");
+
+			thanthai.Sl = 2;
+			thanthai.Nam = "nubanhtrung";
+			thanthai.Nu = "namduahau";
         }
         else if (am[0] == 3 && am[1] == 1)
         {
@@ -302,6 +311,11 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nutetdo");
+
+			thanthai.Sl = 2;
+			thanthai.Nam = "nubanhtrung";
+			thanthai.Nu = "nutetdo";
+
 
         }
         else if (am[0] == 15 && am[1] == 1)
@@ -324,6 +338,10 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
 
+			thanthai.Sl = 3;
+			thanthai.Nam = "namvuahung";
+		
+
         }
         else if (am[0] == 15 && am[1] == 4)
         {
@@ -334,6 +352,9 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+			thanthai.Sl = 3;
+			thanthai.Nam = "namsuphu";
 
         }
         else if (am[0] == 5 && am[1] == 5)
@@ -355,6 +376,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
 
+			thanthai.Sl = 2;
+			thanthai.Nam = "namgiadinh";
+			thanthai.Nu = "nugiadinh";
+
         }
         else if (am[0] == 15 && am[1] == 8)
         {
@@ -364,6 +389,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+			thanthai.Sl = 3;
+			thanthai.Nam = "namduahau";
+
 
         }
         else if (am[0] == 9 && am[1] == 9)
@@ -375,6 +404,11 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+			thanthai.Sl = 2;
+			thanthai.Nam = "dietsaubo";
+		
+
 
         }
         else if (am[0] == 10 && am[1] == 10)
@@ -398,6 +432,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("ongcongongtao");
 
+			thanthai.Sl = 4;
+	
+			thanthai.Nu = "ongcongongtao";
+
         }
         else if (pDt.Day == 1 && pDt.Month == 1)
         {
@@ -414,6 +452,10 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
 
+			thanthai.Sl = 3;
+			thanthai.Nam = "namtinhyeu";
+	
+
         }
         else if (pDt.Day == 27 && pDt.Month == 2)
         {
@@ -424,6 +466,9 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+			thanthai.Sl = 3;
+			thanthai.Nam = "nambacsi";
      
 
         }
@@ -437,6 +482,10 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nudoinon");
+
+			thanthai.Sl = 2;
+			thanthai.Nam = "nuaobetrap";
+			thanthai.Nu = "nudoinon";
 
         }
         else if (pDt.Day == 26 && pDt.Month == 3)
@@ -460,6 +509,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nubodoi");
 
+			thanthai.Sl = 2;
+			thanthai.Nam = "nuhaiquan";
+			thanthai.Nu = "nubodoi";
+
 
         }
         else if (pDt.Day == 1 && pDt.Month == 5)
@@ -473,6 +526,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nudoixe");
 
+			thanthai.Sl = 2;
+			thanthai.Nam = "namkysu";
+			thanthai.Nu = "nudoixe";
+
         }
         else if (pDt.Day == 7 && pDt.Month == 5)
         {
@@ -485,6 +542,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
 
+			thanthai.Sl = 2;
+			thanthai.Nam = "namcongan";
+			thanthai.Nu = "nuhaiquan";
+
         }
         else if (pDt.Day == 13 && pDt.Month == 5)
         {
@@ -496,6 +557,9 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
+
+			thanthai.Sl = 4;
+			thanthai.Nu = "nugiadinh";
 
    
         }
@@ -515,6 +579,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
 
+			thanthai.Sl = 2;
+			thanthai.Nam = "namgiadinh";
+			thanthai.Nu = "nugiadinh";
+
          
         }
         else if (pDt.Day == 17 && pDt.Month == 6)
@@ -526,6 +594,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+			thanthai.Sl = 3;
+			thanthai.Nam = "namgiadinh";
+		
       
 
     
@@ -546,6 +618,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
 
+			thanthai.Sl = 2;
+			thanthai.Nam = "namgiadinh";
+			thanthai.Nu = "nugiadinh";
+
         }
         else if (pDt.Day == 11 && pDt.Month == 7)
         {
@@ -557,6 +633,10 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
+
+			thanthai.Sl = 2;
+			thanthai.Nam = "namgiadinh";
+			thanthai.Nu = "nugiadinh";
 
         }
         else if (pDt.Day == 27 && pDt.Month == 7)
@@ -570,6 +650,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
 
+			thanthai.Sl = 2;
+			thanthai.Nam = "namcongan";
+			thanthai.Nu = "nuhaiquan";
+
         }
         else if (pDt.Day == 28 && pDt.Month == 7)
         {
@@ -580,6 +664,10 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("codosaovang");
+
+			thanthai.Sl = 4;
+
+			thanthai.Nu = "codosaovang";
    
         }
         else if (pDt.Day == 19 && pDt.Month == 8)
@@ -593,6 +681,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
 
+			thanthai.Sl = 2;
+			thanthai.Nam = "namcongan";
+			thanthai.Nu = "nuhaiquan";
+
         }
         else if (pDt.Day == 2 && pDt.Month == 9)
         {
@@ -603,6 +695,10 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("codosaovang");
+
+			thanthai.Sl = 4;
+
+			thanthai.Nu = "codosaovang";
 
         }
         else if (pDt.Day == 10 && pDt.Month == 9)
@@ -615,6 +711,10 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+
+			thanthai.Sl = 2;
+			thanthai.Nam = "namcongan";
+			thanthai.Nu = "nuhaiquan";
 
         }
         else if (pDt.Day == 1 && pDt.Month == 10)
@@ -634,6 +734,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
 
+			thanthai.Sl = 2;
+			thanthai.Nam = "namcongan";
+			thanthai.Nu = "nuhaiquan";
+
         }
         else if (pDt.Day == 13 && pDt.Month == 10)
         {
@@ -644,6 +748,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+			thanthai.Sl = 2;
+			thanthai.Nam = "namdoanhnhan";
+	
    
         }
         else if (pDt.Day == 20 && pDt.Month == 10)
@@ -656,6 +764,11 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nudoinon");
 
+			thanthai.Sl = 2;
+			thanthai.Nam = "nuaobetrap";
+			thanthai.Nu = "nudoinon";
+
+
         }
         else if (pDt.Day == 31 && pDt.Month == 10)
         {
@@ -667,6 +780,10 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhalowen");
+
+			thanthai.Sl = 4;
+
+			thanthai.Nu = "nuhalowen";
 
         }
         else if (pDt.Day == 9 && pDt.Month == 11)
@@ -684,6 +801,10 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
 
+			thanthai.Sl = 3;
+			thanthai.Nam = "namthaygiao";
+	
+
         }
         else if (pDt.Day == 23 && pDt.Month == 11)
         {
@@ -695,6 +816,9 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
 
+			thanthai.Sl = 3;
+			thanthai.Nam = "nambacsi";
+
         }
         else if (pDt.Day == 1 && pDt.Month == 12)
         {
@@ -705,6 +829,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+
+			thanthai.Sl = 3;
+			thanthai.Nam = "nambacsi";
+
 
 
         }
@@ -719,6 +847,10 @@ public class MoveLichNgay : MonoBehaviour {
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
             pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
 
+			thanthai.Sl = 2;
+			thanthai.Nam = "nambacsi";
+			thanthai.Nu = "nuhaiquan";
+
         }
         else if (pDt.Day == 22 && pDt.Month == 12)
         {
@@ -730,6 +862,8 @@ public class MoveLichNgay : MonoBehaviour {
 
             pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
     
+			thanthai.Sl = 3;
+			thanthai.Nam = "namcongan";
        
         }
         else if (pDt.Day == 24 && pDt.Month == 12)
@@ -769,16 +903,19 @@ public class MoveLichNgay : MonoBehaviour {
             {
                 pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
                 pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+				thanthai.Sl = 4;
             }
             else if (chon <= 4)
             {
                 pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
                 pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+				thanthai.Sl = 3;
             }
             else
             {
                 pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
                 pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+				thanthai.Sl = 2;
             }
 
         }
@@ -788,8 +925,58 @@ public class MoveLichNgay : MonoBehaviour {
             author = author.Substring(0, 13)+"...";
         pTra.GetChild(0).GetChild(4).GetComponent<tk2dTextMesh>().text = author;
 
-        thanthai.Danhngon = content;
-        thanthai.Author = author;
+ 
+
+		if (pCheckok == 1) {
+
+			pTra.GetChild(0).GetComponent<tk2dSprite>().SetSprite(""+tbL.Bg);
+
+			if (tbL.Sl == 2) {
+
+				pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("" + tbL.Nam);
+				pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
+
+				pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("" + tbL.Nu);
+
+			} else if (tbL.Sl == 3) {
+				pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("" + tbL.Nam);
+				pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (6).gameObject.SetActive (false);
+			} else {
+
+			
+				pTra.GetChild (0).GetChild (5).gameObject.SetActive (false);
+
+				pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("" + tbL.Nu);
+			}
+
+		} else if (pCheckok == -1) {
+
+			pTra.GetChild(0).GetComponent<tk2dSprite>().SetSprite(""+tbR.Bg);
+
+			if (tbR.Sl == 2) {
+
+				pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("" + tbR.Nam);
+				pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
+
+				pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("" + tbR.Nu);
+
+			} else if (tbR.Sl == 3) {
+				pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("" + tbR.Nam);
+				pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (6).gameObject.SetActive (false);
+			} else {
+
+
+				pTra.GetChild (0).GetChild (5).gameObject.SetActive (false);
+
+				pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("" + tbR.Nu);
+			}
+		}
 	
 	
 	
@@ -820,14 +1007,14 @@ public class MoveLichNgay : MonoBehaviour {
 			float xxxx = this.transform.position.x - startPosition.x;
 			if (xxxx > 120) {
 				today = today.AddDays (-1);
-				doSetDate (oHomNay, today);
-				doSetDate (oHomQua, today.AddDays (-1));
-				doSetDate (oNgayMai, today.AddDays (1));
+				doSetDate (oHomNay, today,ref tbC,1);
+				doSetDate (oHomQua, today.AddDays (-1),ref tbL,0);
+				doSetDate (oNgayMai, today.AddDays (1),ref tbR,0);
 			} else if (xxxx < -120) {
 				today = today.AddDays (1);
-				doSetDate (oHomNay, today);
-				doSetDate (oHomQua, today.AddDays (-1));
-				doSetDate (oNgayMai, today.AddDays (1));
+				doSetDate (oHomNay, today,ref tbC,-1);
+				doSetDate (oHomQua, today.AddDays (-1),ref tbL,0);
+				doSetDate (oNgayMai, today.AddDays (1),ref tbR,0);
 			}
 
 

@@ -3,6 +3,9 @@ using System.Collections;
 
 public class ThanThai  {
 
+
+
+
     int sl = 2;
 
     public int Sl
@@ -34,19 +37,6 @@ public class ThanThai  {
         set { nu = value; }
     }
 
-    string danhngon = "Cuộc sống này thực sự đơn giản, nhưng chúng ta luôn làm nó trở nên phức tạp";
 
-    public string Danhngon
-    {
-        get { return danhngon; }
-        set { danhngon = value; }
-    }
-    string author = "Balo";
-
-    public string Author
-    {
-        get { return author; }
-        set { author = value; }
-    }
 
 }
