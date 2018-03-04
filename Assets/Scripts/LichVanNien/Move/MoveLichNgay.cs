@@ -188,10 +188,26 @@ public class MoveLichNgay : MonoBehaviour {
 	
 		
 		pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "" + pDt.Day;
+        if (pDt.Day < 10)
+        {
+            pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-39, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
+        }
+        else
+        {
+            pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-79, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
+        }
 		//Thang
 		pTra.GetChild (0).GetChild (2).GetComponent<tk2dTextMesh> ().text = "THÁNG "+pDt.Month+" NĂM "+pDt.Year;
 		int[] am = LunarYearTools.convertSolar2Lunar (pDt.Day, pDt.Month, pDt.Year, 7);
 		pTra.GetChild (2).GetChild (2).GetComponent<tk2dTextMesh> ().text = ""+am[0];
+        if (am[0] < 10)
+        {
+            pTra.GetChild(2).GetChild(2).localPosition = new Vector3(-12, pTra.GetChild(2).GetChild(2).localPosition.y, pTra.GetChild(2).GetChild(2).localPosition.z);
+        }
+        else
+        {
+            pTra.GetChild(2).GetChild(2).localPosition = new Vector3(-28, pTra.GetChild(2).GetChild(2).localPosition.y, pTra.GetChild(2).GetChild(2).localPosition.z);
+        }
 		pTra.GetChild(2).GetChild(3).GetComponent<tk2dTextMesh>().text = am[1]+"/"+am[2];
 
 		int dGio = DateTime.Now.Hour;
@@ -226,36 +242,37 @@ public class MoveLichNgay : MonoBehaviour {
 		switch (pDt.DayOfWeek.ToString ().ToLower ().Substring(0,2)) {
 		case "mo":
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 2";
-			
+            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
             doUpdateColor(pTra, new Color((float)4 / 255, (float)167 / 255, (float)12 / 255, 1));
 			break;
 		case "tu":
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 3";
-			
+            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
             doUpdateColor(pTra, new Color((float)38 / 255, (float)104 / 255, (float)234 / 255, 1));
 			break;
 		case "we":
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 4";
-			
+            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
             doUpdateColor(pTra, new Color((float)13 / 255, (float)126 / 255, (float)84 / 255, 1));
 			break;
 		case "th":
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 5";
-			
+            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
             doUpdateColor(pTra, new Color((float)205 / 255, 0, (float)153 / 255, 1));
 			break;
 		case "fr":
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 6";
-			
+            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
             doUpdateColor(pTra, new Color((float)195 / 255, (float)96 / 255, (float)52 / 255, 1));
 			break;
 		case "sa":
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 7";
-			
+            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
             doUpdateColor(pTra, new Color((float)38 / 255, (float)104 / 255, (float)234 / 255, 1));
 			break;
 			default:
 			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Chủ Nhật";
+            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-85, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
             doUpdateColor(pTra, new Color(1, (float)84 / 255, (float)84 / 255, 1));
 			break;
 		}
