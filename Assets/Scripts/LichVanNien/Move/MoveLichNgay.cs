@@ -7,7 +7,7 @@ using System;
 public class MoveLichNgay : MonoBehaviour {
 
     public float speed;
-	public Vector3 startPosition;
+	 Vector3 startPosition;
 	public tk2dTextMesh txttest;
 	DateTime today;
 	Transform oHomQua;
@@ -37,7 +37,7 @@ public class MoveLichNgay : MonoBehaviour {
 	{
 		Today ();
 	}
-	void Today()
+	public void Today()
 	{
 		today = DateTime.Now;
 
@@ -54,8 +54,7 @@ public class MoveLichNgay : MonoBehaviour {
 		oHomQua = this.transform.GetChild (0);
 		oHomNay = this.transform.GetChild (1);
 		oNgayMai = this.transform.GetChild (2);
-		oHomNay.GetChild (4).GetChild (0).GetComponent<tk2dUIItem> ().OnClick += onClick_ToDay;
-	
+		oHomNay.GetChild (4).GetChild (0).GetComponent<tk2dUIItem> ().OnClick += onClick_ToDay;	
 
 		startPosition = this.transform.position;
 
@@ -284,37 +283,37 @@ public class MoveLichNgay : MonoBehaviour {
 		case "mo":
 			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Thứ 2";
             pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
-            doUpdateColor(pTra, new Color((float)4 / 255, (float)167 / 255, (float)12 / 255, 1));
+            doUpdateColor(pTra, new Color(0, (float)170 / 255, 0, 1));
 			break;
 		case "tu":
 			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Thứ 3";
             pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
-            doUpdateColor(pTra, new Color((float)38 / 255, (float)104 / 255, (float)234 / 255, 1));
+            doUpdateColor(pTra, new Color(0, (float)153 / 255, 1, 1));
 			break;
 		case "we":
 			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Thứ 4";
             pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
-            doUpdateColor(pTra, new Color((float)13 / 255, (float)126 / 255, (float)84 / 255, 1));
+            doUpdateColor(pTra, new Color(0, (float)153 / 255, (float)102 / 255, 1));
 			break;
 		case "th":
 			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Thứ 5";
             pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
-            doUpdateColor(pTra, new Color((float)205 / 255, 0, (float)153 / 255, 1));
+            doUpdateColor(pTra, new Color((float)204 / 255, 0, (float)153 / 255, 1));
 			break;
 		case "fr":
 			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Thứ 6";
             pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
-            doUpdateColor(pTra, new Color((float)195 / 255, (float)96 / 255, (float)52 / 255, 1));
+            doUpdateColor(pTra, new Color((float)205 / 255, (float)133 / 255, (float)63 / 255, 1));
 			break;
 		case "sa":
 			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Thứ 7";
             pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
-            doUpdateColor(pTra, new Color((float)38 / 255, (float)104 / 255, (float)234 / 255, 1));
+            doUpdateColor(pTra, new Color(0, (float)153 / 255, 1, 1));
 			break;
 			default:
 			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Chủ Nhật";
             pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-85, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
-            doUpdateColor(pTra, new Color(1, (float)84 / 255, (float)84 / 255, 1));
+            doUpdateColor(pTra, new Color(1, (float)106 / 255, (float)106 / 255, 1));
 			break;
 		}
 	
@@ -1051,35 +1050,42 @@ public class MoveLichNgay : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        if (LichController.instance.currentState == LichController.State.NGAY)
         {
-            // Get movement of the finger since last frame
-            Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 
-            // Move object across XY plane
-            transform.Translate(touchDeltaPosition.x * speed, this.transform.position.y, 0);
-        }
-        else if (Input.touchCount != 0 && Input.GetTouch(0).phase
-       == TouchPhase.Ended)
-        {
-			float xxxx = this.transform.position.x - startPosition.x;
-			if (xxxx > 120) {
-				today = today.AddDays (-1);
-				doSetDate (oHomNay, today,ref tbC,1);
-				doSetDate (oHomQua, today.AddDays (-1),ref tbL,0);
-				doSetDate (oNgayMai, today.AddDays (1),ref tbR,0);
-			} else if (xxxx < -120) {
-				today = today.AddDays (1);
-				doSetDate (oHomNay, today,ref tbC,-1);
-				doSetDate (oHomQua, today.AddDays (-1),ref tbL,0);
-				doSetDate (oNgayMai, today.AddDays (1),ref tbR,0);
-			}
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+                // Get movement of the finger since last frame
+                Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+
+                // Move object across XY plane
+                transform.Translate(touchDeltaPosition.x * speed, this.transform.position.y, 0);
+            }
+            else if (Input.touchCount != 0 && Input.GetTouch(0).phase
+           == TouchPhase.Ended)
+            {
+                float xxxx = this.transform.position.x - startPosition.x;
+                if (xxxx > 120)
+                {
+                    today = today.AddDays(-1);
+                    doSetDate(oHomNay, today, ref tbC, 1);
+                    doSetDate(oHomQua, today.AddDays(-1), ref tbL, 0);
+                    doSetDate(oNgayMai, today.AddDays(1), ref tbR, 0);
+                }
+                else if (xxxx < -120)
+                {
+                    today = today.AddDays(1);
+                    doSetDate(oHomNay, today, ref tbC, -1);
+                    doSetDate(oHomQua, today.AddDays(-1), ref tbL, 0);
+                    doSetDate(oNgayMai, today.AddDays(1), ref tbR, 0);
+                }
 
 
-			txttest.text=""+xxxx;
+                txttest.text = "" + xxxx;
 
 
-			this.transform.position = startPosition;
+                this.transform.position = startPosition;
+            }
         }
 
 
