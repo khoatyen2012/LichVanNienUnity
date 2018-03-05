@@ -64,6 +64,62 @@ public class MoveLichNgay : MonoBehaviour {
 
 	}
 
+	public void setDayToLich(Transform pTra,int pDt)
+	{
+		if (pDt < 10) {
+
+			pTra.GetChild (0).gameObject.SetActive (true);
+			pTra.GetChild (1).gameObject.SetActive (false);
+			switch (pDt) {
+			case 1:
+				pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("ngayle_1");
+				break;
+			case 2:
+				pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("ngayle_2");
+				break;
+			case 3:
+				pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("ngayle_3");
+				break;
+			case 4:
+				pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("ngayle_4");
+				break;
+			case 5:
+				pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("ngayle_5");
+				break;
+			case 6:
+				pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("ngayle_6");
+				break;
+			case 7:
+				pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("ngayle_7");
+				break;
+			case 8:
+				pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("ngayle_8");
+				break;
+			case 9:
+				pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("ngayle_9");
+				break;
+			}
+
+		
+		} else {
+
+			pTra.GetChild (0).gameObject.SetActive (false);
+			pTra.GetChild (1).gameObject.SetActive (true);
+
+			if (pDt < 20) {
+				pTra.GetChild (1).GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("ngayle_1");
+			} else if (pDt < 30) {
+				pTra.GetChild (1).GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("ngayle_2");
+			} else {
+				pTra.GetChild (1).GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("ngayle_3");
+			}
+
+		
+			pTra.GetChild (1).GetChild (1).GetComponent<tk2dSprite> ().SetSprite ("ngayle_"+(""+pDt).Substring(1,1));
+
+		}
+	}
+
 	void GetDaTa(string tmg)
 	{
 		 mang = tmg.Trim().Split('#');
@@ -99,86 +155,86 @@ public class MoveLichNgay : MonoBehaviour {
 		int chonNu = UnityEngine.Random.Range (0, 13);
 		switch (chon) {
 		case 0:
-			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namdodam");
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namdodam");
             thanthai.Nam = "namdodam";
 			break;
 		case 1:
-			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namtim");
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namtim");
             thanthai.Nam = "namtim";
 			break;
 		case 2:
-			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namxanhduong");
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namxanhduong");
             thanthai.Nam = "namxanhduong";
 			break;
 		case 3:
-			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namve");
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namve");
             thanthai.Nam = "namve";
 			break;
 		case 4:
-			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namkysu");
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namkysu");
             thanthai.Nam = "namkysu";
 			break;
 		case 5:
-			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namlichviet");
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namlichviet");
             thanthai.Nam = "namlichviet";
 			break;
 		case 6:
-			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namtana");
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namtana");
             thanthai.Nam = "namtana";
 			break;
 		case 7:
-			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namdothuphap");
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namdothuphap");
             thanthai.Nam = "namdothuphap";
 			break;
 		case 8:
-			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namdoanhnhan");
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namdoanhnhan");
             thanthai.Nam = "namdoanhnhan";
 			break;
 		default:
-			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nambetrap");
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("nambetrap");
             thanthai.Nam = "nambetrap";
 			break;
 		}
 
 		switch (chonNu) {
 		case 0:
-			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nudodam");
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nudodam");
             thanthai.Nu = "nudodam";
 			break;
 		case 1:
-			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nutim");
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nutim");
             thanthai.Nu = "nutim";
 			break;
 		case 2:
-			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nuaodai");
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nuaodai");
             thanthai.Nu = "nuaodai";
 			break;
 		case 3:
-			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nudoimu");
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nudoimu");
             thanthai.Nu = "nudoimu";
 			break;
 		case 4:
-			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nuaobetrap");
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nuaobetrap");
             thanthai.Nu = "nuaobetrap";
 			break;
 		case 5:
-			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nuvanphong");
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nuvanphong");
             thanthai.Nu = "nuvanphong";
 			break;
 		case 6:
-			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nudoinon");
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nudoinon");
             thanthai.Nu = "nudoinon";
 			break;
 		case 7:
-			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("ongcongongtao");
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("ongcongongtao");
             thanthai.Nu = "ongcongongtao";
 			break;
 		case 8:
-			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("namxanhthuphap");
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namxanhthuphap");
             thanthai.Nu = "namxanhthuphap";
 			break;
 		default:
-			pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("nudoixe");
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nudoixe");
             thanthai.Nu = "nudoixe";
 			break;
 		}
@@ -186,29 +242,14 @@ public class MoveLichNgay : MonoBehaviour {
 	
 
 	
-		
-		pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "" + pDt.Day;
-        if (pDt.Day < 10)
-        {
-            pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-39, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
-        }
-        else
-        {
-            pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-79, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
-        }
+		setDayToLich (pTra.GetChild (0).GetChild (6), pDt.Day);
+
 		//Thang
-		pTra.GetChild (0).GetChild (2).GetComponent<tk2dTextMesh> ().text = "THÁNG "+pDt.Month+" NĂM "+pDt.Year;
+		pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "THÁNG "+pDt.Month+" NĂM "+pDt.Year;
 		int[] am = LunarYearTools.convertSolar2Lunar (pDt.Day, pDt.Month, pDt.Year, 7);
-		pTra.GetChild (2).GetChild (2).GetComponent<tk2dTextMesh> ().text = ""+am[0];
-        if (am[0] < 10)
-        {
-            pTra.GetChild(2).GetChild(2).localPosition = new Vector3(-12, pTra.GetChild(2).GetChild(2).localPosition.y, pTra.GetChild(2).GetChild(2).localPosition.z);
-        }
-        else
-        {
-            pTra.GetChild(2).GetChild(2).localPosition = new Vector3(-28, pTra.GetChild(2).GetChild(2).localPosition.y, pTra.GetChild(2).GetChild(2).localPosition.z);
-        }
-		pTra.GetChild(2).GetChild(3).GetComponent<tk2dTextMesh>().text = am[1]+"/"+am[2];
+		//pTra.GetChild (2).GetChild (2).GetComponent<tk2dTextMesh> ().text = ""+am[0];
+		setDayToLich(pTra.GetChild(2).GetChild(3),am[0]);
+		pTra.GetChild(2).GetChild(2).GetComponent<tk2dTextMesh>().text = am[1]+"/"+am[2];
 
 		int dGio = DateTime.Now.Hour;
 		string dPhut = ""+DateTime.Now.Minute;
@@ -241,38 +282,38 @@ public class MoveLichNgay : MonoBehaviour {
 
 		switch (pDt.DayOfWeek.ToString ().ToLower ().Substring(0,2)) {
 		case "mo":
-			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 2";
-            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
+			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Thứ 2";
+            pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
             doUpdateColor(pTra, new Color((float)4 / 255, (float)167 / 255, (float)12 / 255, 1));
 			break;
 		case "tu":
-			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 3";
-            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
+			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Thứ 3";
+            pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
             doUpdateColor(pTra, new Color((float)38 / 255, (float)104 / 255, (float)234 / 255, 1));
 			break;
 		case "we":
-			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 4";
-            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
+			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Thứ 4";
+            pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
             doUpdateColor(pTra, new Color((float)13 / 255, (float)126 / 255, (float)84 / 255, 1));
 			break;
 		case "th":
-			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 5";
-            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
+			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Thứ 5";
+            pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
             doUpdateColor(pTra, new Color((float)205 / 255, 0, (float)153 / 255, 1));
 			break;
 		case "fr":
-			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 6";
-            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
+			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Thứ 6";
+            pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
             doUpdateColor(pTra, new Color((float)195 / 255, (float)96 / 255, (float)52 / 255, 1));
 			break;
 		case "sa":
-			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Thứ 7";
-            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
+			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Thứ 7";
+            pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-52, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
             doUpdateColor(pTra, new Color((float)38 / 255, (float)104 / 255, (float)234 / 255, 1));
 			break;
 			default:
-			pTra.GetChild (0).GetChild (1).GetComponent<tk2dTextMesh> ().text = "Chủ Nhật";
-            pTra.GetChild(0).GetChild(1).localPosition = new Vector3(-85, pTra.GetChild(0).GetChild(1).localPosition.y, pTra.GetChild(0).GetChild(1).localPosition.z);
+			pTra.GetChild (0).GetChild (0).GetComponent<tk2dTextMesh> ().text = "Chủ Nhật";
+            pTra.GetChild(0).GetChild(0).localPosition = new Vector3(-85, pTra.GetChild(0).GetChild(0).localPosition.y, pTra.GetChild(0).GetChild(0).localPosition.z);
             doUpdateColor(pTra, new Color(1, (float)84 / 255, (float)84 / 255, 1));
 			break;
 		}
@@ -292,11 +333,11 @@ public class MoveLichNgay : MonoBehaviour {
         {
             content = "Chúc mừng năm mới. Ngày mùng 1 tết cố truyền dân tộc";
             author = "Xuân đã về";
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namtetdo");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namtetdo");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("namtet");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namtet");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "namtetdo";
@@ -308,11 +349,11 @@ public class MoveLichNgay : MonoBehaviour {
         {
             content = "Mùng 1 tết cha mùng 2 tết mẹ mùng 3 tết thầy";
             author = "Mùng 2 tết";
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nubanhtrung");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("nubanhtrung");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("namduahau");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namduahau");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "nubanhtrung";
@@ -323,11 +364,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Mùng 3 tết thầy";
             author = "Mùng 3 tết";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nubanhtrung");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("nubanhtrung");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nutetdo");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nutetdo");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "nubanhtrung";
@@ -350,10 +391,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày dỗ tổ hùng vương. Vua hùng đã có công dựng nước";
             author = "Vua Hùng";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namvuahung");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namvuahung");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
 
 			thanthai.Sl = 3;
 			thanthai.Nam = "namvuahung";
@@ -365,10 +406,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày lễ phật đản";
             author = "A di đà phật";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namsuphu");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namsuphu");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
 
 			thanthai.Sl = 3;
 			thanthai.Nam = "namsuphu";
@@ -387,11 +428,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Công cha như núi thái sơn. Nghĩa mẹ như nước trong nguồn chảy ra";
             author = "Ngày lễ vu lan";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "namgiadinh";
@@ -402,10 +443,10 @@ public class MoveLichNgay : MonoBehaviour {
         {
             content = "Ngày tết trung thu";
             author = "Chị hằng";
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namduahau");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namduahau");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
 
 			thanthai.Sl = 3;
 			thanthai.Nam = "namduahau";
@@ -417,10 +458,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày tết cửu trùng";
             author = "Diệt sâu bọ";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("dietsaubo");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("dietsaubo");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "dietsaubo";
@@ -444,10 +485,10 @@ public class MoveLichNgay : MonoBehaviour {
             author = "Táo quân";
 
    
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(false);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("ongcongongtao");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("ongcongongtao");
 
 			thanthai.Sl = 4;
 	
@@ -464,10 +505,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày lễ tình nhân";
             author = "Valentine";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namtinhyeu");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namtinhyeu");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
 
 			thanthai.Sl = 3;
 			thanthai.Nam = "namtinhyeu";
@@ -479,10 +520,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày thầy thuốc Việt Nam";
             author = "Lương y như từ mẫu";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nambacsi");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("nambacsi");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
 
 			thanthai.Sl = 3;
 			thanthai.Nam = "nambacsi";
@@ -494,11 +535,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày quốc tế phụ nữ";
             author = "Yêu thương";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuaobetrap");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("nuaobetrap");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nudoinon");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nudoinon");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "nuaobetrap";
@@ -520,11 +561,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "GIẢI PHÓNG MIỀN NAM";
             author = "Giải Phóng";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nubodoi");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nubodoi");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "nuhaiquan";
@@ -537,11 +578,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày quốc tế lao động";
             author = "Lao động";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namkysu");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namkysu");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nudoixe");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nudoixe");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "namkysu";
@@ -553,11 +594,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày chiến thắng điện biên phủ";
             author = "Đừng ngủ quên trên chiến thắng";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "namcongan";
@@ -570,10 +611,10 @@ public class MoveLichNgay : MonoBehaviour {
             author = "Mẹ yêu";
 
    
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(false);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
 
 			thanthai.Sl = 4;
 			thanthai.Nu = "nugiadinh";
@@ -590,11 +631,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày quốc tế thiếu nhi";
             author = "Trẻ em hôm nay";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "namgiadinh";
@@ -607,10 +648,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày của cha";
             author = "Nợ cha 1 sự nghiệp";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
 
 			thanthai.Sl = 3;
 			thanthai.Nam = "namgiadinh";
@@ -629,11 +670,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày gia đình Việt Nam";
             author = "Gia Đình";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "namgiadinh";
@@ -645,11 +686,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày dân số thế giới";
             author = "Kế Hoạch Hóa Gia Đình";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namgiadinh");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nugiadinh");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "namgiadinh";
@@ -661,11 +702,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày thương binh liệt sĩ";
             author = "Tổ quốc ghi công";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "namcongan";
@@ -677,10 +718,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày công đoàn Việt nam";
             author = "Đoàn kết";
 
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(false);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("codosaovang");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("codosaovang");
 
 			thanthai.Sl = 4;
 
@@ -692,11 +733,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày tổng khởi nghĩa";
             author = "Cách mạng tháng 8";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "namcongan";
@@ -708,10 +749,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày quốc khánh";
             author = "Cờ đỏ";
 
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(false);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("codosaovang");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("codosaovang");
 
 			thanthai.Sl = 4;
 
@@ -723,11 +764,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày thành lập mặt trận tổ quốc Việt nam";
             author = "Việt Nam";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "namcongan";
@@ -745,11 +786,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày giải phóng Thủ Đô";
             author = "Hà Nội";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "namcongan";
@@ -761,10 +802,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày doanh nhân Việt Nam";
             author = "Startup";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namdoanhnhan");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namdoanhnhan");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "namdoanhnhan";
@@ -775,11 +816,11 @@ public class MoveLichNgay : MonoBehaviour {
         {
             content = "Ngày phụ nữ Việt Nam";
             author = "Hoa Hồng Có Gai";
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuaobetrap");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("nuaobetrap");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nudoinon");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nudoinon");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "nuaobetrap";
@@ -793,10 +834,10 @@ public class MoveLichNgay : MonoBehaviour {
             author = "Bí Ngô";
 
         
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(false);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhalowen");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuhalowen");
 
 			thanthai.Sl = 4;
 
@@ -813,10 +854,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày Nhà Giáo Việt Nam";
             author = "Bụi phấn";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namthaygiao");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namthaygiao");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
 
 			thanthai.Sl = 3;
 			thanthai.Nam = "namthaygiao";
@@ -828,10 +869,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày thành lập hội chữ thập đỏ Việt Nam";
             author = "Cộng đồng";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nambacsi");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("nambacsi");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
 
 			thanthai.Sl = 3;
 			thanthai.Nam = "nambacsi";
@@ -842,10 +883,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày toàn thế giới chống xi-đa";
             author = "HIV AIDS";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nambacsi");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("nambacsi");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
 
 			thanthai.Sl = 3;
 			thanthai.Nam = "nambacsi";
@@ -858,11 +899,11 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày toàn quốc kháng chiến";
             author = "Cách mạng tháng 12";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
-            pTra.GetChild(0).GetChild(6).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("nuhaiquan");
 
 			thanthai.Sl = 2;
 			thanthai.Nam = "nambacsi";
@@ -874,10 +915,10 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày thành lập quân đội nhân dân Việt Nam";
             author = "CF";
 
-            pTra.GetChild(0).GetChild(5).GetComponent<tk2dSprite>().SetSprite("namcongan");
-            pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            pTra.GetChild(0).GetChild(4).GetComponent<tk2dSprite>().SetSprite("namcongan");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
 
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
     
 			thanthai.Sl = 3;
 			thanthai.Nam = "namcongan";
@@ -888,8 +929,8 @@ public class MoveLichNgay : MonoBehaviour {
             content = "Ngày lễ giáng sinh";
             author = "Noel";
             pTra.GetChild(0).GetComponent<tk2dSprite>().SetSprite("giangsinh");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(false);
             pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
           
         }
         else if (pDt.Day == 25 && pDt.Month == 12)
@@ -898,8 +939,8 @@ public class MoveLichNgay : MonoBehaviour {
             author = "Noel";
 
             pTra.GetChild(0).GetComponent<tk2dSprite>().SetSprite("giangsinh");
+            pTra.GetChild(0).GetChild(4).gameObject.SetActive(false);
             pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
-            pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
         }
         else
         {
@@ -918,29 +959,29 @@ public class MoveLichNgay : MonoBehaviour {
             chon = UnityEngine.Random.Range(0, 6);
             if (chon <= 2)
             {
-                pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
-                pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
+                pTra.GetChild(0).GetChild(4).gameObject.SetActive(false);
+                pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
 				thanthai.Sl = 4;
             }
             else if (chon <= 4)
             {
-                pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
-                pTra.GetChild(0).GetChild(6).gameObject.SetActive(false);
+                pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
+                pTra.GetChild(0).GetChild(5).gameObject.SetActive(false);
 				thanthai.Sl = 3;
             }
             else
             {
+                pTra.GetChild(0).GetChild(4).gameObject.SetActive(true);
                 pTra.GetChild(0).GetChild(5).gameObject.SetActive(true);
-                pTra.GetChild(0).GetChild(6).gameObject.SetActive(true);
 				thanthai.Sl = 2;
             }
 
         }
 
-        pTra.GetChild(0).GetChild(3).GetComponent<tk2dTextMesh>().text = content;
+		pTra.GetChild(0).GetChild(2).GetComponent<tk2dTextMesh>().text = content;
         if (author.Length > 14)
             author = author.Substring(0, 13)+"...";
-        pTra.GetChild(0).GetChild(4).GetComponent<tk2dTextMesh>().text = author;
+        pTra.GetChild(0).GetChild(3).GetComponent<tk2dTextMesh>().text = author;
 
  
 
@@ -950,23 +991,23 @@ public class MoveLichNgay : MonoBehaviour {
 
 			if (tbL.Sl == 2) {
 
-				pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("" + tbL.Nam);
-				pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("" + tbL.Nam);
+				pTra.GetChild (0).GetChild (4).gameObject.SetActive (true);
 
-				pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
-				pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("" + tbL.Nu);
+				pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("" + tbL.Nu);
 
 			} else if (tbL.Sl == 3) {
-				pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("" + tbL.Nam);
-				pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
-				pTra.GetChild (0).GetChild (6).gameObject.SetActive (false);
+				pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("" + tbL.Nam);
+				pTra.GetChild (0).GetChild (4).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (5).gameObject.SetActive (false);
 			} else {
 
 			
-				pTra.GetChild (0).GetChild (5).gameObject.SetActive (false);
+				pTra.GetChild (0).GetChild (4).gameObject.SetActive (false);
 
-				pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
-				pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("" + tbL.Nu);
+				pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("" + tbL.Nu);
 			}
 
 		} else if (pCheckok == -1) {
@@ -975,23 +1016,23 @@ public class MoveLichNgay : MonoBehaviour {
 
 			if (tbR.Sl == 2) {
 
-				pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("" + tbR.Nam);
-				pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("" + tbR.Nam);
+				pTra.GetChild (0).GetChild (4).gameObject.SetActive (true);
 
-				pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
-				pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("" + tbR.Nu);
+				pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("" + tbR.Nu);
 
 			} else if (tbR.Sl == 3) {
-				pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("" + tbR.Nam);
-				pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
-				pTra.GetChild (0).GetChild (6).gameObject.SetActive (false);
+				pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("" + tbR.Nam);
+				pTra.GetChild (0).GetChild (4).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (5).gameObject.SetActive (false);
 			} else {
 
 
-				pTra.GetChild (0).GetChild (5).gameObject.SetActive (false);
+				pTra.GetChild (0).GetChild (4).gameObject.SetActive (false);
 
-				pTra.GetChild (0).GetChild (6).gameObject.SetActive (true);
-				pTra.GetChild (0).GetChild (6).GetComponent<tk2dSprite> ().SetSprite ("" + tbR.Nu);
+				pTra.GetChild (0).GetChild (5).gameObject.SetActive (true);
+				pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("" + tbR.Nu);
 			}
 		}
 	
@@ -1004,7 +1045,7 @@ public class MoveLichNgay : MonoBehaviour {
         pTra.GetChild(4).GetComponent<tk2dSprite>().color = pColor;
         pTra.GetChild(0).GetChild(0).GetComponent<tk2dTextMesh>().color = pColor;
         pTra.GetChild(0).GetChild(1).GetComponent<tk2dTextMesh>().color = pColor;
-        pTra.GetChild(0).GetChild(2).GetComponent<tk2dTextMesh>().color = pColor;
+     
     }
 	
 	// Update is called once per frame
