@@ -8,7 +8,7 @@ public class MoveLichNgay : MonoBehaviour {
 
     public float speed;
 	 Vector3 startPosition;
-	public tk2dTextMesh txttest;
+
 	DateTime today;
 	Transform oHomQua;
 	Transform oHomNay;
@@ -1081,7 +1081,7 @@ public class MoveLichNgay : MonoBehaviour {
                 }
 
 
-                txttest.text = "" + xxxx;
+        
 
 
                 this.transform.position = startPosition;

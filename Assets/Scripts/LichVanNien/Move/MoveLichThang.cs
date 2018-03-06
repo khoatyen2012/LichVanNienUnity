@@ -6,12 +6,55 @@ public class MoveLichThang : MonoBehaviour {
 
     public float speed;
     Vector3 startPosition;
-    public tk2dTextMesh txttest;
+
+	public ItemThang itemPrefab;
+	public float startX;
+	public float distanceX;
+	public float startY;
+	public float distanceY;
+
+	void CreateItem(float positionX, float positionY, int vitri)
+	{
+
+		ItemThang levelCreate = itemPrefab.Spawn<ItemThang>
+			(
+				new Vector3(positionX, positionY, 35f),
+				itemPrefab.transform.rotation
+			);
+
+
+
+		levelCreate.transform.parent = this.gameObject.transform.GetChild(1).transform;
+
+
+	}
+
+	public void Createlevl(int sl)
+	{
+		float positionCreateX = startX;
+		float positionCreateY = startY;
+		for (int i = 1; i <= sl; i++)
+		{
+			CreateItem(positionCreateX, positionCreateY, i);
+			positionCreateX += distanceX;
+			if (i % 7 == 0)
+			{
+				positionCreateX = startX;
+				positionCreateY -= distanceY;
+			}
+		}
+	}
+
+	public void setData()
+	{
+		Createlevl (40);
+	}
 
 
 	// Use this for initialization
 	void Start () {
         startPosition = this.transform.position;
+
 	}
 	
 	// Update is called once per frame
@@ -34,7 +77,7 @@ public class MoveLichThang : MonoBehaviour {
                 
 
 
-                txttest.text = "" + xxxx;
+           
 
 
                 this.transform.position = new Vector3(startPosition.x,0f,startPosition.z);

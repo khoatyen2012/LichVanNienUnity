@@ -50,7 +50,7 @@ public class LichController : MonoBehaviour {
         currentState = State.THANG;
 
         LichThang.transform.position = new Vector3(0f, 0f, LichThang.transform.position.z);
-
+		LichThang.setData ();
         LichNgay.transform.position = new Vector3(0, 1000f, LichNgay.transform.position.z);
     }
 

@@ -89,6 +89,7 @@
      <Compile Include="Assets\Scripts\IO\ReadText.cs" />
      <Compile Include="Assets\Scripts\Level\Level.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\Controller\LichController.cs" />
+     <Compile Include="Assets\Scripts\LichVanNien\Mode\ItemThang.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\Mode\ThanThai.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\Move\MoveLichNgay.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\Move\MoveLichThang.cs" />
