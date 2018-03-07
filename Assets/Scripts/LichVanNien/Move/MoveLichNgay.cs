@@ -319,9 +319,11 @@ public class MoveLichNgay : MonoBehaviour {
 	
 		if (pDt.Day==DateTime.Now.Day && pDt.Month==DateTime.Now.Month && pDt.Year==DateTime.Now.Year) {
 			pTra.GetChild (4).GetChild (0).gameObject.SetActive (false);
+            pTra.GetChild(4).GetChild(1).GetComponent<tk2dTextMesh>().text = "Lịch Vạn Niên";
 			//Debug.Log(""+pDt);
 		} else {
 			pTra.GetChild (4).GetChild (0).gameObject.SetActive (true);
+            pTra.GetChild(4).GetChild(1).GetComponent<tk2dTextMesh>().text = "Tân Á Đại Thành";
 		}
 
 

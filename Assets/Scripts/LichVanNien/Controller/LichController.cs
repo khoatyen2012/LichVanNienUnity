@@ -35,7 +35,7 @@ public class LichController : MonoBehaviour {
 
     public MoveLichNgay LichNgay;
     public MoveLichThang LichThang;
-
+    public TienIch DoiNgay;
 
 	void OnApplicationPause(bool pauseStatus)
 	{
@@ -47,6 +47,11 @@ public class LichController : MonoBehaviour {
 			LichNgay.transform.position = new Vector3(00, 0f, LichNgay.transform.position.z);
 
 			LichThang.transform.position = new Vector3(0f, 1000f, LichThang.transform.position.z);
+            DoiNgay.transform.position = new Vector3(0f, 1000f, DoiNgay.transform.position.z);
+
+            btnNgay.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(1, 0, (float)227 / 255, 1);
+            btnThang.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
+            btnTienich.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
 		}
 	}
 
@@ -57,6 +62,11 @@ public class LichController : MonoBehaviour {
         LichNgay.transform.position = new Vector3(00, 0f, LichNgay.transform.position.z);
 
         LichThang.transform.position = new Vector3(0f, 1000f, LichThang.transform.position.z);
+        DoiNgay.transform.position = new Vector3(0f, 1000f, DoiNgay.transform.position.z);
+
+        btnNgay.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(1, 0, (float)227 / 255, 1);
+        btnThang.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
+        btnTienich.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
     }
 
     public void btnThang_OnClick()
@@ -66,12 +76,26 @@ public class LichController : MonoBehaviour {
         LichThang.transform.position = new Vector3(0f, 0f, LichThang.transform.position.z);
 		LichThang.setData ();
         LichNgay.transform.position = new Vector3(0, 1000f, LichNgay.transform.position.z);
+        DoiNgay.transform.position = new Vector3(0f, 1000f, DoiNgay.transform.position.z);
+
+        btnThang.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(1, 0, (float)227 / 255, 1);
+        btnNgay.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
+        btnTienich.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
     }
 
 
     public void btnTienich_OnClick()
     {
         currentState = State.TIENICH;
+        DoiNgay.transform.position = new Vector3(0f, 0f, DoiNgay.transform.position.z);
+
+        LichThang.transform.position = new Vector3(0f, 1000f, LichThang.transform.position.z);
+        LichNgay.transform.position = new Vector3(00, 1000f, LichNgay.transform.position.z);
+
+
+        btnTienich.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(1, 0, (float)227 / 255, 1);
+        btnThang.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
+        btnNgay.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
     }
 
 

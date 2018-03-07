@@ -93,6 +93,7 @@
      <Compile Include="Assets\Scripts\LichVanNien\Mode\ThanThai.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\Move\MoveLichNgay.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\Move\MoveLichThang.cs" />
+     <Compile Include="Assets\Scripts\LichVanNien\Move\TienIch.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\ThaoTac\LunarYearTools.cs" />
      <Compile Include="Assets\Scripts\ObjectPooling\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\PopUp\MainGame.cs" />
