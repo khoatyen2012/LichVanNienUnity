@@ -36,6 +36,20 @@ public class LichController : MonoBehaviour {
     public MoveLichNgay LichNgay;
     public MoveLichThang LichThang;
 
+
+	void OnApplicationPause(bool pauseStatus)
+	{
+		if (pauseStatus) {
+
+		} else {
+			currentState = State.NGAY;
+			LichNgay.Today();
+			LichNgay.transform.position = new Vector3(00, 0f, LichNgay.transform.position.z);
+
+			LichThang.transform.position = new Vector3(0f, 1000f, LichThang.transform.position.z);
+		}
+	}
+
     public void btnNgay_OnClick()
     {
         currentState = State.NGAY;
