@@ -201,13 +201,13 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
  <Reference Include="JarResolverLib">
- <HintPath>D:/vtc/LichVanNienUnity/Assets/PlayServicesResolver/Editor/JarResolverLib.dll</HintPath>
+ <HintPath>E:/CKH/UnityProject/LichVanNienUnity/Assets/PlayServicesResolver/Editor/JarResolverLib.dll</HintPath>
  </Reference>
  <Reference Include="tk2dExternal">
- <HintPath>D:/vtc/LichVanNienUnity/Assets/TK2DROOT/tk2d/Editor/tk2dExternal.dll</HintPath>
+ <HintPath>E:/CKH/UnityProject/LichVanNienUnity/Assets/TK2DROOT/tk2d/Editor/tk2dExternal.dll</HintPath>
  </Reference>
  <Reference Include="tk2dSkin">
- <HintPath>D:/vtc/LichVanNienUnity/Assets/TK2DROOT/tk2d/Editor/tk2dSkin.dll</HintPath>
+ <HintPath>E:/CKH/UnityProject/LichVanNienUnity/Assets/TK2DROOT/tk2d/Editor/tk2dSkin.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
@@ -218,10 +218,6 @@
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{594601E1-AD3E-BBCF-BDF0-14E616F3813F}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
