@@ -226,18 +226,23 @@ public class TienIch : MonoBehaviour {
 		btnMonthTruAm.OnClick += btnMonthTruAm_OnClick;
 		btnYearTruAm.OnClick += btnYearTruAm_OnClick;
 
-		mDayDuong = DateTime.Now.Day;
-		mMonthDuong = DateTime.Now.Month;
-		mYearDuong = DateTime.Now.Year;
-
-
-		txtDayDuong.text = "" + mDayDuong;
-		txtMonthDuong.text = "" + mMonthDuong;
-		txtYearDuong.text = "" + mYearDuong;
-		doUpdateAm ();	
-		maxMonthDuong = DateTime.DaysInMonth(mYearDuong, mMonthDuong);
+        ToDay();
 
 	}
+
+    public void ToDay()
+    {
+        mDayDuong = DateTime.Now.Day;
+        mMonthDuong = DateTime.Now.Month;
+        mYearDuong = DateTime.Now.Year;
+
+
+        txtDayDuong.text = "" + mDayDuong;
+        txtMonthDuong.text = "" + mMonthDuong;
+        txtYearDuong.text = "" + mYearDuong;
+        doUpdateAm();
+        maxMonthDuong = DateTime.DaysInMonth(mYearDuong, mMonthDuong);
+    }
 	
 	// Update is called once per frame
 	void Update () {

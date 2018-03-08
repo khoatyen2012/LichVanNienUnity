@@ -144,7 +144,7 @@ public class MoveLichNgay : MonoBehaviour {
 			break;
 
 		default:
-			pTra.GetChild (0).GetComponent<tk2dSprite> ().SetSprite ("nennang");
+            pTra.GetChild(0).GetComponent<tk2dSprite>().SetSprite("nennang");
             thanthai.Bg = "nennang";
 			break;
 		}

@@ -42,11 +42,11 @@ public class LichController : MonoBehaviour {
 		if (pauseStatus) {
 
 		} else {
-			currentState = State.NGAY;
-			LichNgay.Today();
-			LichNgay.transform.position = new Vector3(00, 0f, LichNgay.transform.position.z);
+            currentState = State.NGAY;
+            LichNgay.Today();
+            LichNgay.transform.position = new Vector3(00, 0f, LichNgay.transform.position.z);
 
-			LichThang.transform.position = new Vector3(0f, 1000f, LichThang.transform.position.z);
+            LichThang.transform.position = new Vector3(0f, 1000f, LichThang.transform.position.z);
             DoiNgay.transform.position = new Vector3(0f, 1000f, DoiNgay.transform.position.z);
 
             btnNgay.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(1, 0, (float)227 / 255, 1);
@@ -87,6 +87,7 @@ public class LichController : MonoBehaviour {
     public void btnTienich_OnClick()
     {
         currentState = State.TIENICH;
+        DoiNgay.ToDay();
         DoiNgay.transform.position = new Vector3(0f, 0f, DoiNgay.transform.position.z);
 
         LichThang.transform.position = new Vector3(0f, 1000f, LichThang.transform.position.z);
