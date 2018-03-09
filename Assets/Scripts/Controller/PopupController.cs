@@ -11,19 +11,14 @@ public class PopupController : MonoBehaviour {
     public PopUpSHA sha;
     public MainGame mainGame;
 
-    public float showPositionYMainGame;
-    public float hidePostionYMainGame;
+
 
     public float showPositionY;
     public float hidePostionY;
 
-    public float showPositionYKhanGia;
-    public float hidePostionYKhanGia;
 
     public float moveSpeed;
 
-    public float showPositionYNguoiThan;
-    public float showPositionYIwin;
 
 
     #region Singleton
@@ -50,6 +45,7 @@ public class PopupController : MonoBehaviour {
                 * Time.deltaTime;
             yield return 0;
         }
+		popup.transform.position = new Vector3 (popup.transform.position.x,showPositionY,popup.transform.position.z);
 
     }
 
@@ -78,7 +74,7 @@ public class PopupController : MonoBehaviour {
 
     IEnumerator ieMoveRight(GameObject popup)
     {
-        while (popup.transform.position.x < 1200f)
+        while (popup.transform.position.x < 3000f)
         {
             popup.transform.position += Vector3.right
                 * (moveSpeed + 200)
@@ -100,69 +96,38 @@ public class PopupController : MonoBehaviour {
 
   
 
-    IEnumerator ieMoveUpKG(GameObject popup)
-    {
-        while (popup.transform.position.y < hidePostionYKhanGia)
-        {
-            popup.transform.position += Vector3.up
-                * moveSpeed
-                * Time.deltaTime;
-            yield return 0;
-        }
-    }
 
-    IEnumerator ieMoveDownMain(GameObject popup)
-    {
-        while (popup.transform.position.y >= showPositionYMainGame)
-        {
-            popup.transform.position += Vector3.down
-                * moveSpeed
-                * Time.deltaTime;
-            yield return 0;
-        }
 
-    }
-
-    IEnumerator ieMoveUpMain(GameObject popup)
-    {
-        while (popup.transform.position.y < hidePostionYMainGame)
-        {
-            popup.transform.position += Vector3.up
-                * moveSpeed
-                * Time.deltaTime;
-            yield return 0;
-        }
-    }
 
     public void ShowMainGame()
     {
-        StartCoroutine(ieMoveDownMain(mainGame.gameObject));
+		StartCoroutine(ieMoveDown(mainGame.gameObject));
     }
 
     public void HideMainGame()
     {
-        StartCoroutine(ieMoveUpMain(mainGame.gameObject));
+		StartCoroutine(ieMoveUp(mainGame.gameObject));
     }
 
     public void ShowPopUpWin()
     {
-        iwin.transform.position = new Vector3(iwin.transform.position.x, showPositionYIwin, 10f);
+		iwin.transform.position = new Vector3(iwin.transform.position.x, showPositionY, 10f);
     }
 
     public void HidePopUpWin()
     {
-        iwin.transform.position = new Vector3(iwin.transform.position.x, hidePostionYKhanGia, 10f);
+		iwin.transform.position = new Vector3(iwin.transform.position.x, hidePostionY, 10f);
     }
 
 
     public void ShowPopUpNguoiThan()
     {
-        nguoithan.transform.position = new Vector3(nguoithan.transform.position.x, showPositionYNguoiThan, 10f);
+		nguoithan.transform.position = new Vector3(nguoithan.transform.position.x, showPositionY, 10f);
     }
 
     public void HidePopupNguoiThan()
     {
-        StartCoroutine(ieMoveUpKG(nguoithan.gameObject));
+		StartCoroutine(ieMoveUp(nguoithan.gameObject));
 
     }
 
@@ -170,14 +135,14 @@ public class PopupController : MonoBehaviour {
 
     public void HidePopupKhanGia()
     {
-        StartCoroutine(ieMoveUpKG(khangia.gameObject));
+		StartCoroutine(ieMoveUp(khangia.gameObject));
 
     }
 
     public void ShowPopupKhanGia()
     {
         khangia.setPhanTram();
-        khangia.transform.position = new Vector3(khangia.transform.position.x, showPositionYKhanGia, 10f);
+		khangia.transform.position = new Vector3(khangia.transform.position.x, showPositionY, 10f);
     }
 
 

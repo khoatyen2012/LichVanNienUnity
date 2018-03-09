@@ -91,6 +91,7 @@
      <Compile Include="Assets\Scripts\LichVanNien\Controller\LichController.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\Mode\ItemThang.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\Mode\ThanThai.cs" />
+     <Compile Include="Assets\Scripts\LichVanNien\Move\About.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\Move\MoveLichNgay.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\Move\MoveLichThang.cs" />
      <Compile Include="Assets\Scripts\LichVanNien\Move\TienIch.cs" />
