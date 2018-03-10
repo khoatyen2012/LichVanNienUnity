@@ -42,7 +42,7 @@ public class LevelController : MonoBehaviour {
  
         Level levelCreate = levelPrefab.Spawn<Level>
             (
-               new Vector3(462f, positionCreate, 90f),
+               new Vector3(435f, positionCreate, 90f),
              levelPrefab.transform.rotation
             );
 

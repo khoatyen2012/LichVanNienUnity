@@ -106,10 +106,10 @@ public class DapAnController : MonoBehaviour {
          numColorA = 1f;
          nhapnhayok = true;
          doSetEnabal(true);
-         spriteA.SetSprite("select");
-         spriteB.SetSprite("select");
-         spriteC.SetSprite("select");
-         spriteD.SetSprite("select");
+		spriteA.SetSprite("answer_panel");
+		spriteB.SetSprite("answer_panel");
+		spriteC.SetSprite("answer_panel");
+		spriteD.SetSprite("answer_panel");
          spriteA.color = new Color(1, 1, 1, 1);
          spriteB.color = new Color(1, 1, 1, 1);
          spriteC.color = new Color(1, 1, 1, 1);
@@ -126,22 +126,22 @@ public class DapAnController : MonoBehaviour {
 
             if (GameController.instance.selectCase == 1)
             {
-                spriteA.SetSprite("selectfalse");
+				spriteA.SetSprite("answer_panel_false");
             }
 
             if (GameController.instance.selectCase == 2)
             {
-                spriteB.SetSprite("selectfalse");
+				spriteB.SetSprite("answer_panel_false");
             }
 
             if (GameController.instance.selectCase == 3)
             {
-                spriteC.SetSprite("selectfalse");
+				spriteC.SetSprite("answer_panel_false");
             }
 
             if (GameController.instance.selectCase == 4)
             {
-                spriteD.SetSprite("selectfalse");
+				spriteD.SetSprite("answer_panel_false");
             }
            
         }
@@ -149,22 +149,22 @@ public class DapAnController : MonoBehaviour {
 
         if (GameController.instance.truecase == 1)
         {
-            spriteA.SetSprite("selecttrue");
+			spriteA.SetSprite("answer_panel_true");
         }
 
         if (GameController.instance.truecase == 2)
         {
-            spriteB.SetSprite("selecttrue");
+			spriteB.SetSprite("answer_panel_true");
         }
 
         if (GameController.instance.truecase == 3)
         {
-            spriteC.SetSprite("selecttrue");
+			spriteC.SetSprite("answer_panel_true");
         }
 
         if (GameController.instance.truecase == 4)
         {
-            spriteD.SetSprite("selecttrue");
+			spriteD.SetSprite("answer_panel_true");
         }
 
     }
@@ -195,7 +195,7 @@ public class DapAnController : MonoBehaviour {
             if (GameController.instance.currentState == GameController.State.Question)
             {
                 SoundController.Instance.Stop();
-                spriteA.SetSprite("traloicau");
+				spriteA.SetSprite("answer_panel_select");
                 SoundController.Instance.PlayChonA();
                 Reply(1);
             }
@@ -216,7 +216,7 @@ public class DapAnController : MonoBehaviour {
         if (GameController.instance.currentState == GameController.State.Question)
         {
             SoundController.Instance.Stop();
-            spriteB.SetSprite("traloicau");
+				spriteB.SetSprite("answer_panel_select");
             SoundController.Instance.PlayChonB();
             Reply(2);
         }
@@ -234,7 +234,7 @@ public class DapAnController : MonoBehaviour {
         if (GameController.instance.currentState == GameController.State.Question)
         {
             SoundController.Instance.Stop();
-            spriteC.SetSprite("traloicau");
+				spriteC.SetSprite("answer_panel_select");
             SoundController.Instance.PlayChonC();
             Reply(3);
         }
@@ -253,7 +253,7 @@ public class DapAnController : MonoBehaviour {
             if (GameController.instance.currentState == GameController.State.Question)
             {
                 SoundController.Instance.Stop();
-                spriteD.SetSprite("traloicau");
+				spriteD.SetSprite("answer_panel_select");
                 SoundController.Instance.PlayChonD();
                 Reply(4);
             }

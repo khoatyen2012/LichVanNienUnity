@@ -10,6 +10,7 @@ public class PopupController : MonoBehaviour {
     public PopUpWin iwin;
     public PopUpSHA sha;
     public MainGame mainGame;
+	public MaxGame maxlevel;
 
 
 
@@ -34,6 +35,18 @@ public class PopupController : MonoBehaviour {
         }
     }
     #endregion
+
+
+	public void ShowMaxGame()
+	{
+		maxlevel.setData ();
+		maxlevel.transform.position = new Vector3(maxlevel.transform.position.x, showPositionY, 10f);
+	}
+
+	public void HideMaxGame()
+	{
+		maxlevel.transform.position = new Vector3(maxlevel.transform.position.x, hidePostionY, 10f);
+	}
 
 
     IEnumerator ieMoveDown(GameObject popup)
@@ -101,6 +114,7 @@ public class PopupController : MonoBehaviour {
 
     public void ShowMainGame()
     {
+		mainGame.setData ();
 		StartCoroutine(ieMoveDown(mainGame.gameObject));
     }
 

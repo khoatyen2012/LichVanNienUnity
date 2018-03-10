@@ -98,6 +98,7 @@
      <Compile Include="Assets\Scripts\LichVanNien\ThaoTac\LunarYearTools.cs" />
      <Compile Include="Assets\Scripts\ObjectPooling\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\PopUp\MainGame.cs" />
+     <Compile Include="Assets\Scripts\PopUp\MaxGame.cs" />
      <Compile Include="Assets\Scripts\PopUp\PopUpGameOver.cs" />
      <Compile Include="Assets\Scripts\PopUp\PopUpKhanGia.cs" />
      <Compile Include="Assets\Scripts\PopUp\PopUpNguoiThan.cs" />

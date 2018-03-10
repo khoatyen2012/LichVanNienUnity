@@ -97,7 +97,7 @@ public class GameController : MonoBehaviour {
                Config.adsID, AdSize.Banner, AdPosition.Top);
         // Create an empty ad request.
 
-        List<string> listTest = new List<string>();
+   
 
         request = new AdRequest.Builder().AddTestDevice(AdRequest.TestDeviceSimulator).AddTestDevice("54829CBF8D1115A66940C3B0C88A9B7E").Build();
         // Load the banner with the request.
