@@ -15,7 +15,13 @@ public class ItemThang : MonoBehaviour {
 		} else if (pType == 3) {
 			this.transform.GetChild (0).GetComponent<tk2dTextMesh> ().color =  new Color(0, (float)153 / 255, 1, 1);
 			this.GetComponent<tk2dSprite> ().SetSprite ("oringer_card");
-		}else
+        }
+        else if (pType == 4)
+        {
+            this.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(1, (float)69 / 255, 0, 1);
+            this.GetComponent<tk2dSprite>().SetSprite("oringer_card");
+        }
+        else
 		{
 			this.transform.GetChild (0).GetComponent<tk2dTextMesh> ().color = new Color(0, (float)153 / 255, 1, 1);
 			this.GetComponent<tk2dSprite> ().SetSprite ("light_card");

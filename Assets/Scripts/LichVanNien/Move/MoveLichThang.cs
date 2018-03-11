@@ -145,7 +145,15 @@ public class MoveLichThang : MonoBehaviour {
 			string[] tam = lstTam [i - 1].Split ('@');
 			if (!tam [0].Trim ().Equals ("")) {
 				if (int.Parse (tam [0]) == DateTime.Now.Day && pDate.Month == DateTime.Now.Month && pDate.Year == DateTime.Now.Year) {
-					CreateItem (positionCreateX, positionCreateY, pParent, tam [0], tam [1], 3);
+					
+                    if (i == 1 || i == 8 || i == 15 || i == 22 || i == 29 || i == 36)
+                    {
+                        CreateItem(positionCreateX, positionCreateY, pParent, tam[0], tam[1], 4);
+                    }
+                    else
+                    {
+                        CreateItem(positionCreateX, positionCreateY, pParent, tam[0], tam[1], 3);
+                    }
 				} else if (i == 1 || i == 8 || i == 15 || i == 22 || i == 29 || i == 36) {
 					CreateItem (positionCreateX, positionCreateY, pParent, tam [0], tam [1], 2);
 				} else {
