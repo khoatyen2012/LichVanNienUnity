@@ -12,8 +12,8 @@ public class Config  {
 
 #if UNITY_ANDROID
 
-                         public static string adsID = "ca-app-pub-2127327600096597/2847051268";
-    public static string adsInID = "ca-app-pub-2127327600096597/5660916868";
+    public static string adsID = "ca-app-pub-3940256099942544/630097811";
+    public static string adsInID = "ca-app-pub-3940256099942544/1033173712";
 
 
 #endif

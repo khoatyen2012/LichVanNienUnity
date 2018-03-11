@@ -56,9 +56,20 @@ public class LichController : MonoBehaviour {
 	{
 		if (pauseStatus) {
 
+            if (currentState == State.TIENICH || currentState == State.ABOUT)
+            {
+                AdController.instance.HideAdsBanner();
+            }
+
 		} else {
 			if(checkOk)
 			{
+
+                //if (currentState == State.TIENICH || currentState == State.ABOUT)
+                //{
+                //    AdController.instance.HideAdsBanner();
+                //}
+
             currentState = State.NGAY;
             LichNgay.Today();
             LichNgay.transform.position = new Vector3(00, 0f, LichNgay.transform.position.z);
@@ -77,6 +88,7 @@ public class LichController : MonoBehaviour {
 
 	public void btnALTP_OnClick()
 	{
+        AdController.instance.HideAdsBanner();
 		SceneManager.LoadScene("InGame");
 	}
 
@@ -92,7 +104,8 @@ public class LichController : MonoBehaviour {
 
 	public void btnViewAds_OnClick()
 	{
-
+        AdController.instance.HideAdsBanner();
+        AdController.instance.ShowAdsInterstitial();
 	}
 
 	public void btnAbout_OnClick()
@@ -105,12 +118,17 @@ public class LichController : MonoBehaviour {
 		LichNgay.transform.position = new Vector3(00, 1000f, LichNgay.transform.position.z);
 		DoiNgay.transform.position = new Vector3(0f, 1000f, DoiNgay.transform.position.z);
 
-
+        AdController.instance.LoadAdsInterstitial();
 
 	}
 
     public void btnNgay_OnClick()
     {
+        if (currentState == State.TIENICH || currentState == State.ABOUT)
+        {
+            AdController.instance.HideAdsBanner();
+        }
+
         currentState = State.NGAY;
         LichNgay.Today();
         LichNgay.transform.position = new Vector3(00, 0f, LichNgay.transform.position.z);
@@ -126,6 +144,11 @@ public class LichController : MonoBehaviour {
 
     public void btnThang_OnClick()
     {
+        if (currentState == State.TIENICH || currentState == State.ABOUT)
+        {
+            AdController.instance.HideAdsBanner();
+        }
+
         currentState = State.THANG;
 
         LichThang.transform.position = new Vector3(0f, 0f, LichThang.transform.position.z);
@@ -142,6 +165,13 @@ public class LichController : MonoBehaviour {
 
     public void btnTienich_OnClick()
     {
+
+        if (currentState == State.NGAY || currentState == State.THANG)
+        {
+            AdController.instance.LoadAdsBanner();
+            AdController.instance.ShowAdsBanner();
+        }
+
         currentState = State.TIENICH;
         DoiNgay.ToDay();
         DoiNgay.transform.position = new Vector3(0f, 0f, DoiNgay.transform.position.z);
@@ -154,6 +184,7 @@ public class LichController : MonoBehaviour {
         btnTienich.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(1, 0, (float)227 / 255, 1);
         btnThang.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
         btnNgay.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
+        
     }
 
 
