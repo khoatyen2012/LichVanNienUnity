@@ -12,21 +12,23 @@ public class MainGame : MonoBehaviour {
 
 
 
-	public void setData()
+
+
+
+	IEnumerator WaitTimeLoadScene(float time)
 	{
-		AdController.instance.LoadAdsBanner ();
-        AdController.instance.ShowAdsBanner();
+		//do something...............
+		yield return new WaitForSeconds(time);
+		SceneManager.LoadScene("LichVanNien");
 	}
-
-
-
 	
 
 
 	public void btnLichVanNien_OnClick()
 	{
-        AdController.instance.HideAdsBanner();
-		SceneManager.LoadScene("LichVanNien");
+ 
+		StartCoroutine (WaitTimeLoadScene (0.1f));
+
 	}
 
     void btnContinute_OnClick()
@@ -64,7 +66,7 @@ public class MainGame : MonoBehaviour {
         btnDiemCao.OnClick += btnDiemCao_OnClick;
         btnContinute.OnClick += btnContinute_OnClick;
 		btnLichVanNien.OnClick += btnLichVanNien_OnClick;
-		setData ();
+
 
 	}
 	

@@ -52,6 +52,12 @@ public class LichController : MonoBehaviour {
 
 	bool checkOk=false;
 
+	void Awake()
+	{
+		Application.targetFrameRate = 30;
+		QualitySettings.vSyncCount = -1;
+	}
+
 	void OnApplicationPause(bool pauseStatus)
 	{
 		if (pauseStatus) {
@@ -89,6 +95,13 @@ public class LichController : MonoBehaviour {
 	public void btnALTP_OnClick()
 	{
         AdController.instance.HideAdsBanner();
+		StartCoroutine (WaitTimeLoadScene (0.1f));
+	}
+
+	IEnumerator WaitTimeLoadScene(float time)
+	{
+		//do something...............
+		yield return new WaitForSeconds(time);
 		SceneManager.LoadScene("InGame");
 	}
 

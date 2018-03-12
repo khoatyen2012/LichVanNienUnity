@@ -114,7 +114,7 @@ public class PopupController : MonoBehaviour {
 
     public void ShowMainGame()
     {
-		mainGame.setData ();
+		
 		StartCoroutine(ieMoveDown(mainGame.gameObject));
     }
 
