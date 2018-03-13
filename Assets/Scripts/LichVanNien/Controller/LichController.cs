@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LichController : MonoBehaviour {
 
@@ -215,6 +216,19 @@ public class LichController : MonoBehaviour {
 		btnShare.OnClick += btnShare_OnClick;
 		btnRate.OnClick += btnRate_OnClick;
 		btnViewAd.OnClick += btnViewAds_OnClick;
+
+	
+
+		if (DateTime.Now.Month < 5 && (DateTime.Now.Year == 2018)) {
+			btnAbout.gameObject.SetActive (false);
+			btnALTP2.gameObject.SetActive (false);
+		} else {
+
+			btnAbout.gameObject.SetActive (true);
+			btnALTP2.gameObject.SetActive (true);
+		}
+
+
 
 		checkOk = true;
 	}
