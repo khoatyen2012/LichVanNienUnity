@@ -4,7 +4,7 @@ using System.Collections;
 public class Config  {
 
 #if UNITY_IPHONE
-       public static string adsID = "ca-app-pub-2127327600096597/2080016787";
+     public static string adsID = "ca-app-pub-2127327600096597/2080016787";
 	public static string adsInID = "ca-app-pub-2127327600096597/6252509167";
 
 

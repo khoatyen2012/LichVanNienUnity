@@ -219,7 +219,7 @@ public class LichController : MonoBehaviour {
 
 	
 
-		if (DateTime.Now.Month < 7 && (DateTime.Now.Year == 2018)) {
+		if (DateTime.Now.Month < 10 && (DateTime.Now.Year == 2018)) {
 			btnAbout.gameObject.SetActive (false);
 			btnALTP2.gameObject.SetActive (false);
 		} else {
