@@ -25,7 +25,8 @@ public class AdController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		MobileAds.Initialize(Config.appId);
+
 	}
 	
 	// Update is called once per frame
