@@ -1,5 +1,19 @@
 // Copyright 2014 Google Inc. All Rights Reserved.
 
+/// Positions to place an ad.
+typedef NS_ENUM(NSUInteger, GADAdPosition) {
+  kGADAdPositionCustom = -1,              ///< Custom ad position.
+  kGADAdPositionTopOfScreen = 0,          ///< Top of screen.
+  kGADAdPositionBottomOfScreen = 1,       ///< Bottom of screen.
+  kGADAdPositionTopLeftOfScreen = 2,      ///< Top left of screen.
+  kGADAdPositionTopRightOfScreen = 3,     ///< Top right of screen.
+  kGADAdPositionBottomLeftOfScreen = 4,   ///< Bottom left of screen.
+  kGADAdPositionBottomRightOfScreen = 5,  ///< Bottom right of screen.
+  kGADAdPositionCenterOfScreen = 6        ///< Bottom right of screen.
+};
+
+typedef NS_ENUM(NSInteger, GADUAdSize) { kGADUAdSizeUseFullWidth = -1 };
+
 /// Base type representing a GADU* pointer.
 typedef const void *GADUTypeRef;
 
@@ -12,6 +26,12 @@ typedef const void *GADUTypeInterstitialClientRef;
 /// Type representing a Unity reward based video client.
 typedef const void *GADUTypeRewardBasedVideoAdClientRef;
 
+/// Type representing a Unity ad loader.
+typedef const void *GADUTypeAdLoaderClientRef;
+
+/// Type representing a Unity native custom template ad.
+typedef const void *GADUTypeNativeCustomTemplateAdClientRef;
+
 /// Type representing a GADUBanner.
 typedef const void *GADUTypeBannerRef;
 
@@ -21,8 +41,20 @@ typedef const void *GADUTypeInterstitialRef;
 /// Type representing a GADURewardBasedVideoAd.
 typedef const void *GADUTypeRewardBasedVideoAdRef;
 
+/// Type representing a GADUAdLoader.
+typedef const void *GADUTypeAdLoaderRef;
+
+/// Type representing a GADUNativeCustomTemplateAd.
+typedef const void *GADUTypeNativeCustomTemplateAdRef;
+
 /// Type representing a GADURequest.
 typedef const void *GADUTypeRequestRef;
+
+/// Type representing a NSMutableDictionary of extras.
+typedef const void *GADUTypeMutableDictionaryRef;
+
+/// Type representing a GADUAdNetworkExtras.
+typedef const void *GADUTypeAdNetworkExtrasRef;
 
 /// Callback for when a banner ad request was successfully loaded.
 typedef void (*GADUAdViewDidReceiveAdCallback)(GADUTypeBannerClientRef *bannerClient);
@@ -96,3 +128,20 @@ typedef void (*GADURewardBasedVideoAdDidRewardCallback)(
 /// click.
 typedef void (*GADURewardBasedVideoAdWillLeaveApplicationCallback)(
     GADUTypeRewardBasedVideoAdClientRef *rewardBasedVideoClient);
+
+/// Callback for when a reward based video ad completes playing.
+typedef void (*GADURewardBasedVideoAdDidCompleteCallback)(
+    GADUTypeRewardBasedVideoAdClientRef *rewardBasedVideoClient);
+
+/// Callback for when a native custom template ad request was successfully loaded.
+typedef void (*GADUAdLoaderDidReceiveNativeCustomTemplateAdCallback)(
+    GADUTypeAdLoaderClientRef *adLoader, GADUTypeNativeCustomTemplateAdRef nativeCustomTemplateAd,
+    const char *templateID);
+
+/// Callback for when a native ad request failed.
+typedef void (*GADUAdLoaderDidFailToReceiveAdWithErrorCallback)(GADUTypeAdLoaderClientRef *adLoader,
+                                                                const char *error);
+
+/// Callback for when a native custom template ad is clicked.
+typedef void (*GADUNativeCustomTemplateDidReceiveClickCallback)(
+    GADUTypeNativeCustomTemplateAdClientRef *nativeCustomTemplateAd, const char *assetName);
