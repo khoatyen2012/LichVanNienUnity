@@ -142,6 +142,7 @@ public class LichController : MonoBehaviour {
         {
             AdController.instance.HideAdsBanner();
         }
+        SoundCTL.Instance.PlayChamNuoc();
 
         currentState = State.NGAY;
         LichNgay.Today();
@@ -162,6 +163,7 @@ public class LichController : MonoBehaviour {
         {
             AdController.instance.HideAdsBanner();
         }
+        SoundCTL.Instance.PlayChamNuoc();
 
         currentState = State.THANG;
 
@@ -185,6 +187,7 @@ public class LichController : MonoBehaviour {
             AdController.instance.LoadAdsBanner();
             AdController.instance.ShowAdsBanner();
         }
+        SoundCTL.Instance.PlayChamNuoc();
 
         currentState = State.TIENICH;
         DoiNgay.ToDay();
