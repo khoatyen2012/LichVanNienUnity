@@ -150,8 +150,8 @@ public class MoveLichNgay : MonoBehaviour {
 		}
 
 
-		chon = UnityEngine.Random.Range (0, 13);
-		int chonNu = UnityEngine.Random.Range (0, 13);
+		chon = UnityEngine.Random.Range (0, 17);
+		int chonNu = UnityEngine.Random.Range (0, 17);
 		switch (chon) {
 		case 0:
 			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namdodam");
@@ -188,6 +188,34 @@ public class MoveLichNgay : MonoBehaviour {
 		case 8:
 			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namdoanhnhan");
             thanthai.Nam = "namdoanhnhan";
+			break;
+		case 9:
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("nunhayday");
+			thanthai.Nam = "nunhayday";
+			break;
+		case 10:
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("nunhayloco");
+			thanthai.Nam = "nunhayloco";
+			break;
+		case 11:
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namdaurach");
+			thanthai.Nam = "namdaurach";
+			break;
+		case 12:
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namngochoang");
+			thanthai.Nam = "namngochoang";
+			break;
+		case 13:
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namduoiphoc");
+			thanthai.Nam = "namduoiphoc";
+			break;
+		case 14:
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("namthandong");
+			thanthai.Nam = "namthandong";
+			break;
+		case 15:
+			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("nusuueo");
+			thanthai.Nam = "nusuueo";
 			break;
 		default:
 			pTra.GetChild (0).GetChild (4).GetComponent<tk2dSprite> ().SetSprite ("nambetrap");
@@ -231,6 +259,26 @@ public class MoveLichNgay : MonoBehaviour {
 		case 8:
 			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namxanhthuphap");
             thanthai.Nu = "namxanhthuphap";
+			break;
+		case 9:
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nambatuat");
+			thanthai.Nu = "nambatuat";
+			break;
+		case 10:
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namcameo");
+			thanthai.Nu = "namcameo";
+			break;
+		case 11:
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namchayphoc");
+			thanthai.Nu = "namchayphoc";
+			break;
+		case 12:
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("namaoquan");
+			thanthai.Nu = "namaoquan";
+			break;
+		case 13:
+			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nuduyen");
+			thanthai.Nu = "nuduyen";
 			break;
 		default:
 			pTra.GetChild (0).GetChild (5).GetComponent<tk2dSprite> ().SetSprite ("nudoixe");
