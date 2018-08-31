@@ -184,6 +184,7 @@ public class TienIch : MonoBehaviour {
 
 	void doUpdateAm()
 	{
+		SoundCTL.Instance.PlayChamNuoc();
 		int[] am = LunarYearTools.convertSolar2Lunar (mDayDuong, mMonthDuong, mYearDuong, 7);
 
 		mDayAm = am [0];
@@ -198,6 +199,7 @@ public class TienIch : MonoBehaviour {
 
 	void doUpdateDuong()
 	{
+		SoundCTL.Instance.PlayChamNuoc();
 		int[] duong = LunarYearTools.convertLunar2Solar (mDayAm, mMonthAm, mYearAm,0, 7);
 
 		mDayDuong = duong [0];
