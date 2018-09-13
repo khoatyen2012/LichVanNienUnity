@@ -15,8 +15,16 @@ public class MaxGame : MonoBehaviour {
 
 	public void btnDiemCao_OnClick()
 	{
+		try
+		{
 		PopupController.instance.HideMaxGame ();
 		PopupController.instance.ShowMainGame ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	// Use this for initialization

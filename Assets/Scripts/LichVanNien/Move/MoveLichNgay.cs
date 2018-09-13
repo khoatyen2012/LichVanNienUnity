@@ -35,7 +35,16 @@ public class MoveLichNgay : MonoBehaviour {
 
 	void onClick_ToDay()
 	{
+		try
+		{
+			
 		Today ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 	public void Today()
 	{
@@ -49,6 +58,8 @@ public class MoveLichNgay : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		try
+		{
 		string ss = ReadText.readTextFile(sText);
 		GetDaTa (ss);
 		oHomQua = this.transform.GetChild (0);
@@ -60,6 +71,12 @@ public class MoveLichNgay : MonoBehaviour {
 
 	
 		Today ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 
 	}
 

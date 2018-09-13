@@ -95,8 +95,16 @@ public class LichController : MonoBehaviour {
 
 	public void btnALTP_OnClick()
 	{
+		try
+		{
         AdController.instance.HideAdsBanner();
 		StartCoroutine (WaitTimeLoadScene (0.1f));
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	IEnumerator WaitTimeLoadScene(float time)
@@ -108,22 +116,48 @@ public class LichController : MonoBehaviour {
 
 	public void btnRate_OnClick()
 	{
+		try
+		{
+		ShareRate.Rate ();
+		}
+		catch (System.Exception)
+		{
 
+			throw;
+		}
 	}
 
 	public void btnShare_OnClick()
 	{
+		try
+		{
+		ShareRate.Share ();
+		}
+		catch (System.Exception)
+		{
 
+			throw;
+		}
 	}
 
 	public void btnViewAds_OnClick()
 	{
+		try
+		{
         AdController.instance.HideAdsBanner();
         AdController.instance.ShowAdsInterstitial();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	public void btnAbout_OnClick()
 	{
+		try
+		{
 		currentState = State.ABOUT;
 	
 		about.transform.position = new Vector3(0f, 0f, about.transform.position.z);
@@ -133,11 +167,19 @@ public class LichController : MonoBehaviour {
 		DoiNgay.transform.position = new Vector3(0f, 1000f, DoiNgay.transform.position.z);
 
         AdController.instance.LoadAdsInterstitial();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 
 	}
 
     public void btnNgay_OnClick()
     {
+		try
+		{
         if (currentState == State.TIENICH || currentState == State.ABOUT)
         {
             AdController.instance.HideAdsBanner();
@@ -155,10 +197,18 @@ public class LichController : MonoBehaviour {
         btnNgay.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(1, 0, (float)227 / 255, 1);
         btnThang.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
         btnTienich.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
     public void btnThang_OnClick()
     {
+		try
+		{
         if (currentState == State.TIENICH || currentState == State.ABOUT)
         {
             AdController.instance.HideAdsBanner();
@@ -176,12 +226,19 @@ public class LichController : MonoBehaviour {
         btnThang.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(1, 0, (float)227 / 255, 1);
         btnNgay.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
         btnTienich.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
 
     public void btnTienich_OnClick()
     {
-
+		try
+		{
         if (currentState == State.NGAY || currentState == State.THANG)
         {
             AdController.instance.LoadAdsBanner();
@@ -201,6 +258,12 @@ public class LichController : MonoBehaviour {
         btnTienich.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(1, 0, (float)227 / 255, 1);
         btnThang.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
         btnNgay.transform.GetChild(0).GetComponent<tk2dTextMesh>().color = new Color(0, 0, 0, 1);
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
         
     }
 
@@ -209,6 +272,8 @@ public class LichController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		try
+		{
         btnNgay.OnClick += btnNgay_OnClick;
         btnThang.OnClick += btnThang_OnClick;
         btnTienich.OnClick += btnTienich_OnClick;
@@ -234,6 +299,12 @@ public class LichController : MonoBehaviour {
 
 
 		checkOk = true;
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 	
 	// Update is called once per frame

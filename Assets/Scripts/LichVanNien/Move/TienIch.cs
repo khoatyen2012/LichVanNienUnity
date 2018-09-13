@@ -44,16 +44,26 @@ public class TienIch : MonoBehaviour {
 
 	public void btnDayCongAm_OnClick()
 	{
+		try
+		{
 		mDayAm++;
 		if (mDayAm > maxMonthAm) {
 			mDayAm = 1;
 		}
 		txtDayAm.text = "" + mDayAm;
 		doUpdateDuong ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	public void btnMonthCongAm_OnClick()
 	{
+		try
+		{
 		mMonthAm++;
 		if (mMonthAm > 12) {
 			mMonthAm = 1;
@@ -65,27 +75,51 @@ public class TienIch : MonoBehaviour {
 			txtDayAm.text = "" + mDayAm;
 		}
 		doUpdateDuong ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	public void btnYearCongAm_OnClick()
 	{
+		try
+		{
 		mYearAm++;
 		txtYearAm.text = "" + mYearAm;
 		doUpdateDuong ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	public void btnDayTruAm_OnClick()
 	{
+		try
+		{
 		mDayAm--;
 		if (mDayAm < 1) {
 			mDayAm = maxMonthAm;
 		}
 		txtDayAm.text = "" + mDayAm;
 		doUpdateDuong ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	public void btnMonthTruAm_OnClick()
 	{
+		try
+		{
 		mMonthAm--;
 		if (mMonthAm < 1) {
 			mMonthAm = 12;
@@ -97,13 +131,27 @@ public class TienIch : MonoBehaviour {
 			txtDayAm.text = "" + mDayAm;
 		}
 		doUpdateDuong ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	public void btnYearTruAm_OnClick()
 	{
+		try
+		{
 		mYearAm--;
 		txtYearAm.text = "" + mYearAm;
 		doUpdateDuong ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 
@@ -111,6 +159,8 @@ public class TienIch : MonoBehaviour {
 
 	public void btnDayCongDuong_OnClick()
 	{
+		try
+		{
 		mDayDuong++;
 		if (mDayDuong > maxMonthDuong) {
 		mDayDuong = 1;
@@ -118,10 +168,18 @@ public class TienIch : MonoBehaviour {
 		txtDayDuong.text = "" + mDayDuong;
 
 		doUpdateAm ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	public void btnMonthCongDuong_OnClick()
 	{
+		try
+		{
 		mMonthDuong++;
 		if (mMonthDuong > 12) {
 			mMonthDuong = 1;
@@ -136,29 +194,53 @@ public class TienIch : MonoBehaviour {
 		}
 
 		doUpdateAm ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 
 
 	}
 
 	public void btnYearCongDuong_OnClick()
 	{
+		try
+		{
 		mYearDuong++;
 		txtYearDuong.text = "" + mYearDuong;
 		doUpdateAm ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	public void btnDayTruDuong_OnClick()
 	{
+		try
+		{
 		mDayDuong--;
 		if (mDayDuong < 1) {
 			mDayDuong = maxMonthDuong;
 		}
 		txtDayDuong.text = "" + mDayDuong;
 		doUpdateAm ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	public void btnMonthTruDuong_OnClick()
 	{
+		try
+		{
 		mMonthDuong--;
 		if (mMonthDuong < 1) {
 			mMonthDuong = 12;
@@ -173,13 +255,27 @@ public class TienIch : MonoBehaviour {
 		}
 
 		doUpdateAm ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	public void btnYearTruDuong_OnClick()
 	{
+		try
+		{
 		mYearDuong--;
 		txtYearDuong.text = "" + mYearDuong;
 		doUpdateAm ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	void doUpdateAm()
@@ -214,6 +310,8 @@ public class TienIch : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		try
+		{
 		btnDayCongDuong.OnClick += btnDayCongDuong_OnClick;
 		btnMonthCongDuong.OnClick += btnMonthCongDuong_OnClick;
 		btnYearCongDuong.OnClick += btnYearCongDuong_OnClick;
@@ -229,6 +327,12 @@ public class TienIch : MonoBehaviour {
 		btnYearTruAm.OnClick += btnYearTruAm_OnClick;
 
         ToDay();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 
 	}
 

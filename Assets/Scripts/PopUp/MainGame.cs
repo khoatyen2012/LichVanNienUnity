@@ -26,19 +26,34 @@ public class MainGame : MonoBehaviour {
 
 	public void btnLichVanNien_OnClick()
 	{
- 
+		try
+		{
 		StartCoroutine (WaitTimeLoadScene (0.1f));
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 
 	}
 
     void btnContinute_OnClick()
     {
+		try
+		{
         AdController.instance.HideAdsBanner();
         PopupController.instance.ShowSHA();
         SoundController.Instance.Stop();
         SoundController.Instance.PlayChungTa();
         PopupController.instance.HideMainGame();
         StartCoroutine(WaitTimeSHA(4f));
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 
     
     }
@@ -57,8 +72,16 @@ public class MainGame : MonoBehaviour {
 
     void btnDiemCao_OnClick()
     {
+		try
+		{
 		PopupController.instance.HideMainGame ();
 		PopupController.instance.ShowMaxGame ();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
 	// Use this for initialization

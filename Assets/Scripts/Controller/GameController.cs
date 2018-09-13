@@ -64,6 +64,8 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
     void Start()
     {
+		try
+		{
         string ss = ReadText.readTextFile(sText);
         GetDaTa(ss);
 
@@ -75,6 +77,12 @@ public class GameController : MonoBehaviour {
   
         //suget();
         StartCoroutine(WaitTimeLoadData(5f));
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
      
        
     }

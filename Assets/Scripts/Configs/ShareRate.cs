@@ -5,8 +5,8 @@ using System;
 public class ShareRate
 {
 
-    public static string titleShare = "Đi tìm Ai Là Triệu Phú";
-	public static string LinkShare = "https://itunes.apple.com/us/app/l%E1%BB%8Bch-t%C3%A2n-%C3%A1-v%E1%BA%A1n-ni%C3%AAn/id1358063154";
+	public static string titleShare = "Lịch Vạn Niên - ALTP";
+	public static string LinkShare = "https://itunes.apple.com/us/app/lịch-vạn-niên-2019-tân-á/id1358063154";
 
     public static void Share()
     {

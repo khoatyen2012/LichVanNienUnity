@@ -175,11 +175,19 @@ public class MoveLichThang : MonoBehaviour {
 
 	public void setData()
 	{
+		try
+		{
         setEmptyChild();
 		today = DateTime.Now;
 		Createlevl (40,startX,startY,TraGiua,today);
 		Createlevl(40, startX-580, startY, TraTrai,today.AddMonths(-1));
 		Createlevl(40, startX+580, startY, TraPhai,today.AddMonths(1));
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	//public void btnHomNay_OnClick()
@@ -190,6 +198,8 @@ public class MoveLichThang : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		try
+		{
         startPosition = this.transform.position;
         TraTrai = this.gameObject.transform.GetChild(0).transform;
         TraGiua = this.gameObject.transform.GetChild(1).transform;
@@ -197,6 +207,12 @@ public class MoveLichThang : MonoBehaviour {
 		btnHomNay = TraGiua.GetChild (0).GetChild (3).GetComponent<tk2dUIItem> ();
 		btnHomNay.OnClick += setData;
 		today = DateTime.Now;
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 
 	IEnumerator WaitTimeTrai(float time)
