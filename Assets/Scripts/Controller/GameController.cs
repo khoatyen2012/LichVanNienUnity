@@ -144,7 +144,7 @@ public class GameController : MonoBehaviour {
         SoundController.Instance.Stop();
         if (truecase == selectCase)
         {
-            LevelController.instance.nhapnhay();
+           
             setLaiVanSam("traloidung");
             if (level > maxlevel)
             {
@@ -239,7 +239,7 @@ public class GameController : MonoBehaviour {
 
      
       PopupController.instance.ShowPopupGameOver(level-1,maxlevel);
-      AdController.instance.ShowAdsBanner();
+     // AdController.instance.ShowAdsBanner();
 
   }
 
@@ -261,7 +261,7 @@ public class GameController : MonoBehaviour {
   {
       //do something...............
       yield return new WaitForSeconds(time);
-      SoundController.Instance.Stop();
+      //SoundController.Instance.Stop();
       if (currentState == State.Question)
       {
           
@@ -375,7 +375,7 @@ public class GameController : MonoBehaviour {
         }
        
 
-        LevelController.instance.setEmptyChild(level);
+       
         dTime = 60;
         demframe = 0;
         txtTime.color = new Color(1, 1, 1, 1);

@@ -159,7 +159,7 @@ public class LichController : MonoBehaviour {
 		try
 		{
 		currentState = State.ABOUT;
-	
+			AdController.instance.HideAdsBanner();
 		about.transform.position = new Vector3(0f, 0f, about.transform.position.z);
 
 		LichThang.transform.position = new Vector3(0f, 1000f, LichThang.transform.position.z);
@@ -287,7 +287,7 @@ public class LichController : MonoBehaviour {
 
 	
 
-		if (DateTime.Now.Month < 10 && (DateTime.Now.Year == 2018)) {
+		if (DateTime.Now.Month < 11 && (DateTime.Now.Year == 2018)) {
 			btnAbout.gameObject.SetActive (false);
 			btnALTP2.gameObject.SetActive (false);
 		} else {

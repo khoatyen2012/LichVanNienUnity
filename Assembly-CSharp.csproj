@@ -90,7 +90,6 @@
      <Compile Include="Assets\Scripts\Controller\DapAnController.cs" />
      <Compile Include="Assets\Scripts\Controller\DataController.cs" />
      <Compile Include="Assets\Scripts\Controller\GameController.cs" />
-     <Compile Include="Assets\Scripts\Controller\LevelController.cs" />
      <Compile Include="Assets\Scripts\Controller\PopupController.cs" />
      <Compile Include="Assets\Scripts\Controller\SoundController.cs" />
      <Compile Include="Assets\Scripts\Controller\TroGiupControlller.cs" />

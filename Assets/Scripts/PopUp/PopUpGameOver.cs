@@ -19,7 +19,7 @@ public class PopUpGameOver : MonoBehaviour {
     void callResetDapAn()
     {
          DapAnController.instance.resetDapAN();
-       AdController.instance.HideAdsBanner();
+      // AdController.instance.HideAdsBanner();
     }
 
     public void setlevel(int level, int maxlevel)

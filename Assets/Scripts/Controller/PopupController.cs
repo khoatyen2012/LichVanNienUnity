@@ -87,7 +87,7 @@ public class PopupController : MonoBehaviour {
 
     IEnumerator ieMoveRight(GameObject popup)
     {
-        while (popup.transform.position.x < 3000f)
+		while (popup.transform.position.x < 1500f)
         {
             popup.transform.position += Vector3.right
                 * (moveSpeed + 200)
